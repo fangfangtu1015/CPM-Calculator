@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Disallow:/includes/
+Disallow: /includes/
 Sitemap: https://cpmcalc.org/sitemap.xml

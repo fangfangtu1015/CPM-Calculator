@@ -13,6 +13,11 @@ export default {
       pathname = pathname.slice(0, -1);
     }
 
+    // Root path → serve index.html directly
+    if (pathname === '/') {
+      return env.ASSETS.fetch(request);
+    }
+
     // Try serving as .html (clean URL → file.html)
     const htmlUrl = pathname + '.html';
     const htmlReq = new Request(new URL(htmlUrl, url.origin), request);
@@ -28,7 +33,7 @@ export default {
       });
     }
 
-    // Fallback: serve as-is (for / → index.html, 404, etc.)
+    // Fallback: let Cloudflare handle 404
     return env.ASSETS.fetch(request);
   },
 };
