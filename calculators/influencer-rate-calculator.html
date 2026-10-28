@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Crect x='18' y='55' width='16' height='30' rx='3' fill='%232563eb'/%3E%3Crect x='42' y='35' width='16' height='50' rx='3' fill='%232563eb'/%3E%3Crect x='66' y='15' width='16' height='70' rx='3' fill='%232563eb'/%3E%3C/svg%3E">
+  <title>Influencer Rate Calculator - Fair Pricing Tool</title>
+  <meta name="description" content="Free Influencer Rate Calculator. Estimate fair pricing for influencer marketing campaigns based on platform, followers, engagement rate, and content type.">
+  <link rel="canonical" href="https://cpmcalc.org/calculators/influencer-rate-calculator/">
+  <meta property="og:title" content="Influencer Rate Calculator - Determine Fair Influencer Pricing">
+  <meta property="og:description" content="Calculate fair influencer marketing rates based on platform, follower count, engagement rate, and content type.">
+  <meta property="og:type" content="website">
+<meta property="og:site_name" content="CPM Calculator">
+  <meta property="og:url" content="https://cpmcalc.org/calculators/influencer-rate-calculator/">
+  <meta property="og:image" content="https://cpmcalc.org/images/ad-metrics-comparison.webp">
+<meta property="og:image:alt" content="CPM Calculator - Free Online Advertising Cost Calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Influencer Rate Calculator - Determine Fair Influencer Pricing">
+  <meta name="twitter:description" content="Calculate fair influencer marketing rates based on platform, follower count, engagement rate, and content type.">
+  <meta name="twitter:image" content="https://cpmcalc.org/images/ad-metrics-comparison.webp">
+  <link rel="stylesheet" href="/css/style.css">
+<style>.form-group select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:0.95rem;background:#fff;}.currency-label{font-weight:normal;font-size:0.85em;color:var(--text-light);}</style>
+<script src="/js/currency.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Influencer Rate Calculator",
+    "url": "https://cpmcalc.org/calculators/influencer-rate-calculator/",
+    "description": "Estimate fair influencer marketing rates based on platform, followers, engagement rate, and content type.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All"
+  }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cpmcalc.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Influencer Rate Calculator - Fair Pricing Tool",
+      "item": "https://cpmcalc.org/calculators/influencer-rate-calculator/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../" class="logo"><span class="logo-icon">&#x1F4CA;</span> CPM Calculator</a>
+      <button class="mobile-toggle" onclick="document.querySelector('nav').classList.toggle('open')">&#9776;</button>
+      <nav>
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li class="has-dropdown">
+            <a href="../calculators/youtube-cpm-calculator" class="active">Calculators</a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-label">Platform CPM</li>
+              <li><a href="../calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></li>
+              <li><a href="../calculators/tiktok-cpm-calculator">TikTok CPM Calculator</a></li>
+              <li><a href="../calculators/instagram-cpm-calculator">Instagram CPM Calculator</a></li>
+              <li><a href="../calculators/facebook-ads-cpm-calculator">Facebook Ads CPM</a></li>
+              <li><a href="../calculators/google-ads-cpm-calculator">Google Ads CPM</a></li>
+              <li><a href="../calculators/display-ads-cpm-calculator">Display Ads CPM</a></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-label">Revenue &amp; Rates</li>
+              <li><a href="../calculators/ecpm-calculator">eCPM Calculator</a></li>
+              <li><a href="../calculators/adsense-revenue-calculator">AdSense Revenue</a></li>
+              <li><a href="../calculators/sponsored-post-calculator">Sponsored Post Rate</a></li>
+              <li><a href="../calculators/influencer-rate-calculator">Influencer Rate</a></li>
+              <li><a href="../calculators/youtube-rpm-calculator">YouTube RPM Calculator</a></li>
+              <li><a href="../calculators/tiktok-rpm-calculator">TikTok RPM Calculator</a></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-label">Converters</li>
+              <li><a href="../calculators/cpm-to-cpc-converter">CPM to CPC</a></li>
+              <li><a href="../calculators/cpm-to-rpm-converter">CPM to RPM</a></li>
+              <li><a href="../calculators/batch-cpm-calculator">Batch CPM Calculator</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="../benchmarks/average-cpm-by-country">Benchmarks</a>
+            <ul class="dropdown-menu">
+              <li><a href="../benchmarks/average-cpm-by-country">CPM by Country</a></li>
+              <li><a href="../benchmarks/youtube-cpm-by-niche">YouTube CPM by Niche</a></li>
+              <li><a href="../benchmarks/average-rpm-by-platform">RPM by Platform</a></li>
+            </ul>
+          </li>
+          <li><a href="../blog/">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="breadcrumb"><a href="../">Home</a> &rsaquo; <a href="../calculators/youtube-cpm-calculator">Calculators</a> &rsaquo; Influencer Rate Calculator</div>
+    <h1>Influencer Rate Calculator</h1>
+    <p>Determine fair pricing for influencer marketing campaigns based on platform, follower count, engagement rate, and content type.</p>
+  </section>
+
+  <div class="container">
+    <div class="calc-card">
+      <h2>Calculate Influencer Rates</h2>
+      <div class="form-group">
+        <label for="currency">Currency</label>
+        <select id="currency">
+          <option value="USD" selected>USD - US Dollar ($)</option>
+          <option value="EUR">EUR - Euro (€)</option>
+          <option value="GBP">GBP - British Pound (£)</option>
+          <option value="CNY">CNY - Chinese Yuan (¥)</option>
+          <option value="JPY">JPY - Japanese Yen (¥)</option>
+          <option value="INR">INR - Indian Rupee (₹)</option>
+          <option value="CAD">CAD - Canadian Dollar (C$)</option>
+          <option value="AUD">AUD - Australian Dollar (A$)</option>
+          <option value="BRL">BRL - Brazilian Real (R$)</option>
+          <option value="KRW">KRW - Korean Won (₩)</option>
+          <option value="MXN">MXN - Mexican Peso (MX$)</option>
+          <option value="SGD">SGD - Singapore Dollar (S$)</option>
+          <option value="CHF">CHF - Swiss Franc</option>
+          <option value="HKD">HKD - Hong Kong Dollar (HK$)</option>
+          <option value="ZAR">ZAR - South African Rand (R)</option>
+        </select>
+      <p style="font-size:0.8rem;color:var(--text-light);margin:4px 0 0;">Exchange rates fixed as of October 2026. For live rates, verify with your payment provider.</p>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="platform">Platform</label>
+          <select id="platform">
+            <option value="instagram">Instagram</option>
+            <option value="youtube">YouTube</option>
+            <option value="tiktok">TikTok</option>
+            <option value="twitter">Twitter / X</option>
+            <option value="facebook">Facebook</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="followers">Follower Count</label>
+          <input type="number" id="followers" placeholder="e.g. 50000" min="0" step="1">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="engagement">Engagement Rate (%)</label>
+          <input type="number" id="engagement" placeholder="e.g. 3.5" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="contentType">Content Type</label>
+          <select id="contentType">
+            <option value="1">Feed Post</option>
+            <option value="0.6">Story</option>
+            <option value="1.2">Reel / Short Video</option>
+            <option value="2.5">Dedicated Video (YouTube)</option>
+            <option value="0.8">Tweet / Text Post</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn btn-block" onclick="calculateRate()">Calculate Rate</button>
+      <div class="result-box" id="resultBox">
+        <div class="result-value" id="resultValue">$0</div>
+        <div class="result-label">Estimated Rate Range</div>
+        <div class="result-breakdown" id="resultBreakdown"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <div class="container" style="max-width:780px;">
+      <h2>How Influencer Rate Pricing Works</h2>
+      <p>Influencer marketing has grown into a $21 billion industry in 2026, and determining fair pricing for influencer collaborations remains one of the biggest challenges for both brands and creators. Unlike traditional advertising with fixed CPM rates, influencer pricing depends on a complex mix of factors including platform, follower count, engagement rate, niche, and content type.</p>
+      <p>This calculator uses industry-standard formulas to estimate fair rates. The baseline formula considers the platform's typical CPM, your follower count, and your engagement rate to produce a market-rate estimate.</p>
+
+      <h2>Influencer Tiers and Rate Ranges (2026)</h2>
+      <p>The influencer marketing industry categorizes creators into tiers based on follower count. Each tier has different rate expectations:</p>
+      <table class="data-table">
+        <thead>
+          <tr><th>Tier</th><th>Followers</th><th>Typical Rate Range</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nano Influencer</td><td>1,000 - 10,000</td><td>$20 - $200</td></tr>
+          <tr><td>Micro Influencer</td><td>10,000 - 50,000</td><td>$100 - $5,000</td></tr>
+          <tr><td>Mid-Tier Influencer</td><td>50,000 - 500,000</td><td>$500 - $10,000</td></tr>
+          <tr><td>Macro Influencer</td><td>500,000 - 1,000,000</td><td>$5,000 - $25,000</td></tr>
+          <tr><td>Mega Influencer</td><td>1,000,000+</td><td>$10,000+</td></tr>
+        </tbody>
+      </table>
+
+      <div class="key-point">
+        <strong>Key Insight:</strong> Nano and micro influencers often deliver the highest engagement rates (3-8%) and best ROI for brands, despite their lower absolute rates. Brands are increasingly shifting budgets toward smaller creators for authentic, niche-targeted campaigns.
+      </div>
+
+      <h2>Platform-Specific Rate Differences</h2>
+      <p>Each platform has its own pricing dynamics based on content format, audience behavior, and advertiser demand:</p>
+
+      <h3>Instagram</h3>
+      <p>Instagram remains the dominant platform for influencer marketing. Average engagement rates range from 0.48% to 3.5% depending on follower count. Instagram posts typically command the highest rates among social platforms due to the visual format's effectiveness for product promotion. Reels are growing rapidly and can be priced at a premium due to higher reach.</p>
+
+      <h3>YouTube</h3>
+      <p>YouTube influencers command the highest rates per piece of content due to the production effort involved and the long shelf life of video content. A dedicated YouTube video integration can remain viewable for years, providing ongoing value to brands. YouTube sponsored videos typically cost 2-3x more than an equivalent Instagram post.</p>
+
+      <h3>TikTok</h3>
+      <p>TikTok influencer rates have risen significantly as the platform matures. While TikTok's overall CPM is lower than Instagram, the platform's viral potential means a single post can generate massive reach. TikTok creators often charge based on expected views rather than follower count alone.</p>
+
+      <h3>Twitter/X</h3>
+      <p>Twitter/X has the lowest influencer rates among major platforms. The text-heavy format and shorter content lifespan make it less effective for visual product promotion. However, it can be effective for B2B campaigns, tech announcements, and real-time event marketing.</p>
+
+      <h2>Engagement Rate Benchmarks (2026)</h2>
+      <table class="data-table">
+        <thead>
+          <tr><th>Platform</th><th>Nano/Micro</th><th>Mid-Tier</th><th>Macro/Mega</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Instagram</td><td>3.5 - 8%</td><td>1.5 - 3.5%</td><td>0.5 - 1.5%</td></tr>
+          <tr><td>YouTube</td><td>4 - 8%</td><td>2 - 4%</td><td>1 - 2.5%</td></tr>
+          <tr><td>TikTok</td><td>5 - 15%</td><td>3 - 8%</td><td>1 - 3%</td></tr>
+          <tr><td>Twitter/X</td><td>1 - 3%</td><td>0.5 - 1%</td><td>0.1 - 0.5%</td></tr>
+          <tr><td>Facebook</td><td>0.5 - 2%</td><td>0.2 - 0.5%</td><td>0.1 - 0.2%</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-top:8px;"><strong>Sources:</strong> Influencer rate data from <a href="https://influencermarketinghub.com/influencer-marketing-benchmark-report/" target="_blank" rel="nofollow noopener noreferrer">Influencer Marketing Hub</a> Benchmark Report 2026 and <a href="https://www.sproutsocial.com/insights/social-media-statistics/" target="_blank" rel="nofollow noopener noreferrer">Sprout Social</a> Social Media Statistics 2026. Engagement rates are platform averages; individual creator rates vary based on niche, audience demographics, and content quality.</p>
+
+      <h2>How Brands Calculate Influencer ROI</h2>
+      <p>Brands typically evaluate influencer partnerships using several metrics: cost per engagement (CPE), cost per click (CPC), cost per acquisition (CPA), and earned media value (EMV). A common benchmark is that brands aim for an ROI of $5.20 for every $1 spent on influencer marketing. When negotiating rates, understanding the brand's expected ROI can help you justify your pricing.</p>
+
+      <h2>Negotiation Tips for Influencers</h2>
+      <ul>
+        <li><strong>Create a media kit:</strong> Include your follower count, engagement rate, audience demographics, past campaign results, and rate card.</li>
+        <li><strong>Charge based on value, not just followers:</strong> High engagement rates justify premium pricing even with smaller follower counts.</li>
+        <li><strong>Offer tiered packages:</strong> Provide options for single posts, multi-post campaigns, and long-term partnerships at different price points.</li>
+        <li><strong>Include usage rights:</strong> If the brand wants to use your content in their own advertising, charge an additional 25-50% for usage rights.</li>
+        <li><strong>Negotiate exclusivity:</strong> If a brand asks you not to work with competitors for a period, add a 30-50% exclusivity fee.</li>
+        <li><strong>Track and report results:</strong> Providing post-campaign analytics builds trust and justifies rate increases for future collaborations.</li>
+      </ul>
+
+      <div class="related-links">
+        <h3>Related Tools &amp; Resources</h3>
+        <ul>
+          <li><a href="../calculators/sponsored-post-calculator">Sponsored Post Calculator</a></li>
+          <li><a href="../calculators/instagram-cpm-calculator">Instagram CPM Calculator</a></li>
+          <li><a href="../calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  
+    <p style="font-size:0.85rem;color:var(--text-light);margin-top:24px;padding:16px;background:#f8f9fa;border-radius:var(--radius);border-left:3px solid var(--primary);">
+    <strong>Disclaimer:</strong> This calculator provides estimates for reference purposes only and does not constitute financial or business advice. Actual costs and results may vary based on market conditions, targeting, competition, and other factors. Exchange rates are approximate and not real-time financial data. Industry benchmarks are derived from publicly available third-party reports and should be interpreted with caution. Always consult with qualified advertising professionals before making budget decisions.
+    </p>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>CPM Calculator</h4>
+        <p style="font-size:0.88rem;margin-bottom:10px;">Free online tools for calculating and optimizing advertising costs.</p>
+      <p style="font-size:0.88rem;margin-bottom:10px;"><a href="mailto:contact@cpmcalc.org" style="color:var(--primary);">contact@cpmcalc.org</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul>
+          <li><a href="../calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></li>
+          <li><a href="../calculators/tiktok-cpm-calculator">TikTok CPM Calculator</a></li>
+          <li><a href="../calculators/ecpm-calculator">eCPM Calculator</a></li>
+          <li><a href="../calculators/cpm-to-cpc-converter">CPM to CPC Converter</a></li>
+          <li><a href="../calculators/adsense-revenue-calculator">AdSense Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Benchmarks</h4>
+        <ul>
+          <li><a href="../benchmarks/average-cpm-by-country">CPM by Country</a></li>
+          <li><a href="../benchmarks/youtube-cpm-by-niche">YouTube CPM by Niche</a></li>
+          <li><a href="../benchmarks/average-rpm-by-platform">RPM by Platform</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog/cpm-formula-how-it-works">CPM Formula Guide</a></li>
+          <li><a href="../blog/cpm-vs-cpc-key-differences">CPM vs CPC</a></li>
+          <li><a href="../blog/what-is-ecpm-vs-rpm">eCPM vs RPM</a></li>
+          <li><a href="../blog/how-to-calculate-cpm-for-ad-campaigns">How to Calculate CPM</a></li>
+          <li><a href="../about">About Us</a></li>
+          <li><a href="../contact">Contact</a></li>
+          <li><a href="../privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CPM Calculator. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="../about">About</a>
+        <a href="../contact">Contact</a>
+        <a href="../privacy">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function calculateRate() {
+      var platform = document.getElementById('platform').value;
+      var followers = parseFloat(document.getElementById('followers').value);
+      var engagement = parseFloat(document.getElementById('engagement').value);
+      var contentType = parseFloat(document.getElementById('contentType').value);
+      var curr = document.getElementById('currency').value;
+      var sym = currencies[curr].symbol;
+      var rate = currencies[curr].rate;
+      var box = document.getElementById('resultBox');
+      var val = document.getElementById('resultValue');
+      var brk = document.getElementById('resultBreakdown');
+
+      if (isNaN(followers) || isNaN(engagement) || followers <= 0 || engagement <= 0) {
+        alert('Please enter valid positive numbers for all fields.');
+        return;
+      }
+
+      // Platform base CPM rates
+      var platformRates = {
+        instagram: 10,
+        youtube: 20,
+        tiktok: 7,
+        twitter: 4,
+        facebook: 8
+      };
+
+      var platformNames = {
+        instagram: 'Instagram',
+        youtube: 'YouTube',
+        tiktok: 'TikTok',
+        twitter: 'Twitter/X',
+        facebook: 'Facebook'
+      };
+
+      var baseCPM = platformRates[platform];
+      var engFactor = engagement / 2; // Normalize: 2% engagement = 1.0x
+      var baseRate = (followers / 1000) * baseCPM * Math.min(engFactor, 3) * contentType;
+
+      var lowRange = Math.round(baseRate * 0.7);
+      var highRange = Math.round(baseRate * 1.4);
+
+      val.textContent = sym + lowRange.toLocaleString() + ' - ' + sym + highRange.toLocaleString();
+
+      var tier = '';
+      if (followers < 10000) tier = 'Nano Influencer';
+      else if (followers < 50000) tier = 'Micro Influencer';
+      else if (followers < 500000) tier = 'Mid-Tier Influencer';
+      else if (followers < 1000000) tier = 'Macro Influencer';
+      else tier = 'Mega Influencer';
+
+      brk.innerHTML = '<strong>Rate Breakdown:</strong><br>' +
+        'Platform: ' + platformNames[platform] + '<br>' +
+        'Followers: ' + followers.toLocaleString() + ' (' + tier + ')<br>' +
+        'Engagement Rate: ' + engagement + '%<br>' +
+        'Content Type Multiplier: ' + contentType.toFixed(1) + 'x<br><br>' +
+        '<strong>Estimated Range:</strong><br>' +
+        'Low: ' + sym + lowRange.toLocaleString() + '<br>' +
+        'Mid: ' + sym + Math.round(baseRate).toLocaleString() + '<br>' +
+        'High: ' + sym + highRange.toLocaleString() + '<br><br>' +
+        '<strong>Note:</strong> Rates vary based on niche, audience demographics, content quality, and negotiation. Use this as a starting point.';
+
+      box.classList.add('show');
+    }
+  </script>
+<script>
+document.querySelectorAll('.has-dropdown > a').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    if (window.innerWidth <= 768) {
+      if (!this.parentElement.classList.contains('open')) {
+        e.preventDefault();
+        this.parentElement.classList.add('open');
+      }
+    }
+  });
+});
+</script>
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:20px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;">
+    <p style="margin:0;flex:1;font-size:0.9rem;line-height:1.5;">
+      We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.
+      <a href="/privacy" style="color:#4a9eff;text-decoration:underline;">Learn more</a>
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#4a9eff;color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.9rem;">Accept</button>
+      <button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.9rem;">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+function acceptCookies(){localStorage.setItem('cookie_consent','accepted');document.getElementById('cookie-banner').style.display='none';}
+function declineCookies(){localStorage.setItem('cookie_consent','declined');document.getElementById('cookie-banner').style.display='none';}
+if(!localStorage.getItem('cookie_consent')){document.getElementById('cookie-banner').style.display='block';}
+</script>
+</body>
+</html>

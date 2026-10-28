@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Crect x='18' y='55' width='16' height='30' rx='3' fill='%232563eb'/%3E%3Crect x='42' y='35' width='16' height='50' rx='3' fill='%232563eb'/%3E%3Crect x='66' y='15' width='16' height='70' rx='3' fill='%232563eb'/%3E%3C/svg%3E">
+  <title>AdSense Revenue Calculator - Estimate Earnings</title>
+  <meta name="description" content="Free AdSense Revenue Calculator. Estimate daily, monthly, and yearly AdSense earnings based on page views, CTR, CPC, and ad units.">
+  <link rel="canonical" href="https://cpmcalc.org/calculators/adsense-revenue-calculator/">
+  <meta property="og:title" content="AdSense Revenue Calculator - Estimate Your Google AdSense Earnings">
+  <meta property="og:description" content="Estimate your AdSense earnings based on page views, CTR, CPC, and ad units. Calculate daily, monthly, and yearly revenue.">
+  <meta property="og:type" content="website">
+<meta property="og:site_name" content="CPM Calculator">
+  <meta property="og:url" content="https://cpmcalc.org/calculators/adsense-revenue-calculator/">
+  <meta property="og:image" content="https://cpmcalc.org/images/ad-metrics-comparison.webp">
+<meta property="og:image:alt" content="CPM Calculator - Free Online Advertising Cost Calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AdSense Revenue Calculator - Estimate Your Google AdSense Earnings">
+  <meta name="twitter:description" content="Estimate your AdSense earnings based on page views, CTR, CPC, and ad units. Calculate daily, monthly, and yearly revenue.">
+  <meta name="twitter:image" content="https://cpmcalc.org/images/ad-metrics-comparison.webp">
+  <link rel="stylesheet" href="/css/style.css">
+<style>.form-group select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:0.95rem;background:#fff;}.currency-label{font-weight:normal;font-size:0.85em;color:var(--text-light);}</style>
+<script src="/js/currency.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AdSense Revenue Calculator",
+    "url": "https://cpmcalc.org/calculators/adsense-revenue-calculator/",
+    "description": "Estimate your Google AdSense earnings based on page views, CTR, CPC, and ad units.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All"
+  }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cpmcalc.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "AdSense Revenue Calculator - Estimate Earnings",
+      "item": "https://cpmcalc.org/calculators/adsense-revenue-calculator/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../" class="logo"><span class="logo-icon">&#x1F4CA;</span> CPM Calculator</a>
+      <button class="mobile-toggle" onclick="document.querySelector('nav').classList.toggle('open')">&#9776;</button>
+      <nav>
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li class="has-dropdown">
+            <a href="../calculators/youtube-cpm-calculator" class="active">Calculators</a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-label">Platform CPM</li>
+              <li><a href="../calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></li>
+              <li><a href="../calculators/tiktok-cpm-calculator">TikTok CPM Calculator</a></li>
+              <li><a href="../calculators/instagram-cpm-calculator">Instagram CPM Calculator</a></li>
+              <li><a href="../calculators/facebook-ads-cpm-calculator">Facebook Ads CPM</a></li>
+              <li><a href="../calculators/google-ads-cpm-calculator">Google Ads CPM</a></li>
+              <li><a href="../calculators/display-ads-cpm-calculator">Display Ads CPM</a></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-label">Revenue &amp; Rates</li>
+              <li><a href="../calculators/ecpm-calculator">eCPM Calculator</a></li>
+              <li><a href="../calculators/adsense-revenue-calculator">AdSense Revenue</a></li>
+              <li><a href="../calculators/sponsored-post-calculator">Sponsored Post Rate</a></li>
+              <li><a href="../calculators/influencer-rate-calculator">Influencer Rate</a></li>
+              <li><a href="../calculators/youtube-rpm-calculator">YouTube RPM Calculator</a></li>
+              <li><a href="../calculators/tiktok-rpm-calculator">TikTok RPM Calculator</a></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-label">Converters</li>
+              <li><a href="../calculators/cpm-to-cpc-converter">CPM to CPC</a></li>
+              <li><a href="../calculators/cpm-to-rpm-converter">CPM to RPM</a></li>
+              <li><a href="../calculators/batch-cpm-calculator">Batch CPM Calculator</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="../benchmarks/average-cpm-by-country">Benchmarks</a>
+            <ul class="dropdown-menu">
+              <li><a href="../benchmarks/average-cpm-by-country">CPM by Country</a></li>
+              <li><a href="../benchmarks/youtube-cpm-by-niche">YouTube CPM by Niche</a></li>
+              <li><a href="../benchmarks/average-rpm-by-platform">RPM by Platform</a></li>
+            </ul>
+          </li>
+          <li><a href="../blog/">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="breadcrumb"><a href="../">Home</a> &rsaquo; <a href="../calculators/youtube-cpm-calculator">Calculators</a> &rsaquo; AdSense Revenue Calculator</div>
+    <h1>AdSense Revenue Calculator</h1>
+    <p>Estimate your Google AdSense earnings based on your page views, click-through rate, average CPC, and number of ad units per page.</p>
+  </section>
+
+  <div class="container">
+    <div class="calc-card">
+      <h2>Estimate Your AdSense Revenue</h2>
+      <div class="form-group">
+        <label for="currency">Currency</label>
+        <select id="currency">
+          <option value="USD" selected>USD - US Dollar ($)</option>
+          <option value="EUR">EUR - Euro (€)</option>
+          <option value="GBP">GBP - British Pound (£)</option>
+          <option value="CNY">CNY - Chinese Yuan (¥)</option>
+          <option value="JPY">JPY - Japanese Yen (¥)</option>
+          <option value="INR">INR - Indian Rupee (₹)</option>
+          <option value="CAD">CAD - Canadian Dollar (C$)</option>
+          <option value="AUD">AUD - Australian Dollar (A$)</option>
+          <option value="BRL">BRL - Brazilian Real (R$)</option>
+          <option value="KRW">KRW - Korean Won (₩)</option>
+          <option value="MXN">MXN - Mexican Peso (MX$)</option>
+          <option value="SGD">SGD - Singapore Dollar (S$)</option>
+          <option value="CHF">CHF - Swiss Franc</option>
+          <option value="HKD">HKD - Hong Kong Dollar (HK$)</option>
+          <option value="ZAR">ZAR - South African Rand (R)</option>
+        </select>
+      <p style="font-size:0.8rem;color:var(--text-light);margin:4px 0 0;">Exchange rates fixed as of October 2026. For live rates, verify with your payment provider.</p>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="pageViews">Daily Page Views</label>
+          <input type="number" id="pageViews" placeholder="e.g. 10000" min="0" step="1">
+        </div>
+        <div class="form-group">
+          <label for="ctr">Page CTR (%)</label>
+          <input type="number" id="ctr" placeholder="e.g. 2.5" min="0" step="0.01">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cpc">Average CPC <span class="currency-label">($)</span></label>
+          <input type="number" id="cpc" placeholder="e.g. 0.50" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="adUnits">Ad Units Per Page</label>
+          <input type="number" id="adUnits" placeholder="e.g. 3" min="1" max="10" step="1">
+        </div>
+      </div>
+      <button class="btn btn-block" onclick="calculateRevenue()">Calculate Revenue</button>
+      <div class="result-box" id="resultBox">
+        <div class="result-value" id="resultValue">$0.00</div>
+        <div class="result-label">Estimated Daily Revenue</div>
+        <div class="result-breakdown" id="resultBreakdown"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <div class="container" style="max-width:780px;">
+      <h2>How Does Google AdSense Work?</h2>
+      <p>Google AdSense is a program that allows website publishers, bloggers, and YouTube creators to earn money by displaying Google ads on their content. When a visitor views your page and clicks on an ad (or views it, depending on the ad type), you earn a share of the advertising revenue. AdSense is one of the most popular monetization methods for content creators worldwide.</p>
+
+      <h3>Revenue Share Model</h3>
+      <p>Google operates a revenue share model with AdSense publishers. For long-form content on websites, publishers receive <strong>68%</strong> of the ad revenue, while Google keeps 32%. For YouTube content, the split is <strong>55%</strong> to the creator and 45% to Google. This means if an advertiser pays $10 CPM for your YouTube video, you would earn approximately $5.50 CPM (before other deductions).</p>
+
+      <div class="formula-box">Daily Revenue = Page Views &times; (CTR / 100) &times; CPC &times; Ad Units<br><br>RPM = (CTR / 100) &times; CPC &times; 1,000</div>
+
+      <h2>Factors That Affect AdSense Earnings</h2>
+
+      <h3>Traffic Volume</h3>
+      <p>The most obvious factor is how many page views your site receives. More traffic means more ad impressions and more potential clicks. However, traffic quality matters just as much as quantity. A site with 5,000 highly targeted visitors from organic search will often outperform a site with 50,000 untargeted visitors from social media.</p>
+
+      <h3>Niche and Content Topic (2026)</h3>
+      <p>Your content niche dramatically affects your CPC and RPM. Advertisers in high-value industries pay significantly more per click:</p>
+      <table class="data-table">
+        <thead>
+          <tr><th>Niche</th><th>Typical RPM Range</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Finance &amp; Insurance</td><td>$15 - $50</td></tr>
+          <tr><td>Legal</td><td>$12 - $40</td></tr>
+          <tr><td>B2B / SaaS</td><td>$10 - $30</td></tr>
+          <tr><td>Health &amp; Medical</td><td>$8 - $25</td></tr>
+          <tr><td>Technology</td><td>$5 - $20</td></tr>
+          <tr><td>Education</td><td>$4 - $15</td></tr>
+          <tr><td>Travel</td><td>$3 - $12</td></tr>
+          <tr><td>Entertainment</td><td>$1 - $5</td></tr>
+          <tr><td>Gaming</td><td>$1 - $4</td></tr>
+          <tr><td>News / General</td><td>$1 - $5</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-top:8px;"><strong>Sources:</strong> AdSense revenue share rates from <a href="https://www.google.com/adsense/start/" target="_blank" rel="nofollow noopener noreferrer">Google AdSense</a> Program Policies 2026; niche RPM data from <a href="https://www.digitalapplied.com/blog/youtube-statistics-2026-platform-data-points" target="_blank" rel="nofollow noopener noreferrer">Digital Applied</a> YouTube Statistics 2026 and <a href="https://www.shopify.com/blog/youtube-cpm" target="_blank" rel="nofollow noopener noreferrer">Shopify - YouTube CPM Guide</a> creator analytics. Earnings estimates assume 80% monetization rate and US/UK/CA/AU audience mix.</p>
+
+      <h3>Geographic Location of Traffic</h3>
+      <p>Visitors from the United States, United Kingdom, Canada, and Australia generate significantly higher CPCs than visitors from developing nations. A click from a US visitor might be worth $1-$5, while the same click from an Indian visitor might be worth $0.05-$0.30.</p>
+
+      <h3>Ad Placement and Format</h3>
+      <p>Where you place ads on your page affects both CTR and user experience. Above-the-fold placements, in-content ads, and anchor ads typically generate the highest CTRs. Google allows up to 3 ad units per page, and finding the right balance between revenue and user experience is key.</p>
+
+      <div class="key-point">
+        <strong>Key Insight:</strong> The optimal number of ad units per page depends on your content layout. Most publishers find that 2-3 well-placed ad units generate the best balance between revenue and user experience. More ads do not always mean more revenue if they drive visitors away.
+      </div>
+
+      <h2>How to Increase Your AdSense Revenue</h2>
+      <ul>
+        <li><strong>Create high-quality, long-form content:</strong> Longer articles generate more page views per session and more ad impressions.</li>
+        <li><strong>Target high-CPC keywords:</strong> Research keywords in your niche that have high advertiser demand. Finance, insurance, and legal keywords pay the most.</li>
+        <li><strong>Optimize ad placements:</strong> Test different ad positions to find the highest-performing configuration. In-content ads typically outperform sidebar ads.</li>
+        <li><strong>Improve page speed:</strong> Faster pages reduce bounce rate and increase the number of ads that actually load and are seen.</li>
+        <li><strong>Focus on organic search traffic:</strong> SEO traffic converts better than social media traffic, resulting in higher CPCs and CTRs.</li>
+        <li><strong>Use responsive ad units:</strong> Responsive ads automatically adjust to the user's device, improving viewability and click rates.</li>
+        <li><strong>Target US/UK/CA/AU audiences:</strong> Content in English that appeals to these demographics will generate the highest CPCs.</li>
+      </ul>
+
+      <h2>AdSense Approval Requirements</h2>
+      <p>Before you can monetize with AdSense, your site must be approved by Google. Key requirements include: original, high-quality content (at least 20-30 articles), a professional website design, clear navigation, a privacy policy page, an about page, sufficient site traffic, and compliance with Google's program policies. Most applications are reviewed within 1-2 weeks.</p>
+
+      <div class="related-links">
+        <h3>Related Tools &amp; Resources</h3>
+        <ul>
+          <li><a href="../calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></li>
+          <li><a href="../calculators/ecpm-calculator">eCPM Calculator</a></li>
+          <li><a href="../blog/how-much-do-youtubers-make-per-1000-views">How Much Do YouTubers Make Per 1,000 Views?</a></li>
+          <li><a href="../blog/youtube-monetization-adsense-approval">YouTube Monetization &amp; AdSense Approval Guide</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  
+    <p style="font-size:0.85rem;color:var(--text-light);margin-top:24px;padding:16px;background:#f8f9fa;border-radius:var(--radius);border-left:3px solid var(--primary);">
+    <strong>Disclaimer:</strong> This calculator provides estimates for reference purposes only and does not constitute financial or business advice. Actual costs and results may vary based on market conditions, targeting, competition, and other factors. Exchange rates are approximate and not real-time financial data. Industry benchmarks are derived from publicly available third-party reports and should be interpreted with caution. Always consult with qualified advertising professionals before making budget decisions.
+    </p>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>CPM Calculator</h4>
+        <p style="font-size:0.88rem;margin-bottom:10px;">Free online tools for calculating and optimizing advertising costs.</p>
+      <p style="font-size:0.88rem;margin-bottom:10px;"><a href="mailto:contact@cpmcalc.org" style="color:var(--primary);">contact@cpmcalc.org</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul>
+          <li><a href="../calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></li>
+          <li><a href="../calculators/tiktok-cpm-calculator">TikTok CPM Calculator</a></li>
+          <li><a href="../calculators/ecpm-calculator">eCPM Calculator</a></li>
+          <li><a href="../calculators/cpm-to-cpc-converter">CPM to CPC Converter</a></li>
+          <li><a href="../calculators/adsense-revenue-calculator">AdSense Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Benchmarks</h4>
+        <ul>
+          <li><a href="../benchmarks/average-cpm-by-country">CPM by Country</a></li>
+          <li><a href="../benchmarks/youtube-cpm-by-niche">YouTube CPM by Niche</a></li>
+          <li><a href="../benchmarks/average-rpm-by-platform">RPM by Platform</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog/cpm-formula-how-it-works">CPM Formula Guide</a></li>
+          <li><a href="../blog/cpm-vs-cpc-key-differences">CPM vs CPC</a></li>
+          <li><a href="../blog/what-is-ecpm-vs-rpm">eCPM vs RPM</a></li>
+          <li><a href="../blog/how-to-calculate-cpm-for-ad-campaigns">How to Calculate CPM</a></li>
+          <li><a href="../about">About Us</a></li>
+          <li><a href="../contact">Contact</a></li>
+          <li><a href="../privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CPM Calculator. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="../about">About</a>
+        <a href="../contact">Contact</a>
+        <a href="../privacy">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function calculateRevenue() {
+      var pv = parseFloat(document.getElementById('pageViews').value);
+      var ctr = parseFloat(document.getElementById('ctr').value);
+      var cpc = parseFloat(document.getElementById('cpc').value);
+      var units = parseInt(document.getElementById('adUnits').value);
+      var curr = document.getElementById('currency').value;
+      var sym = currencies[curr].symbol;
+      var rate = currencies[curr].rate;
+      var box = document.getElementById('resultBox');
+      var val = document.getElementById('resultValue');
+      var brk = document.getElementById('resultBreakdown');
+
+      if (isNaN(pv) || isNaN(ctr) || isNaN(cpc) || isNaN(units) || pv <= 0 || ctr <= 0 || cpc <= 0 || units < 1) {
+        alert('Please enter valid positive numbers for all fields.');
+        return;
+      }
+
+      var ctrDecimal = ctr / 100;
+      var dailyRevenue = pv * ctrDecimal * cpc * units;
+      var monthlyRevenue = dailyRevenue * 30;
+      var yearlyRevenue = dailyRevenue * 365;
+      var rpm = ctrDecimal * cpc * 1000;
+
+      val.textContent = sym + dailyRevenue.toFixed(2);
+
+      brk.innerHTML = '<strong>Revenue Breakdown:</strong><br>' +
+        'Daily Page Views: ' + pv.toLocaleString() + '<br>' +
+        'CTR: ' + ctr + '% | CPC: ' + sym + cpc.toFixed(2) + ' | Ad Units: ' + units + '<br>' +
+        'RPM: ' + sym + rpm.toFixed(2) + '<br><br>' +
+        '<strong>Earnings Estimate:</strong><br>' +
+        'Daily: ' + sym + dailyRevenue.toFixed(2) + '<br>' +
+        'Monthly: ' + sym + monthlyRevenue.toFixed(2) + '<br>' +
+        'Yearly: ' + sym + yearlyRevenue.toFixed(2) + '<br><br>' +
+        '<strong>Note:</strong> These are estimates based on your inputs. Actual AdSense earnings vary based on traffic quality, ad placement, niche, and seasonality. Google pays 68% of ad revenue to website publishers.';
+
+      box.classList.add('show');
+    }
+  </script>
+<script>
+document.querySelectorAll('.has-dropdown > a').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    if (window.innerWidth <= 768) {
+      if (!this.parentElement.classList.contains('open')) {
+        e.preventDefault();
+        this.parentElement.classList.add('open');
+      }
+    }
+  });
+});
+</script>
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:20px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;">
+    <p style="margin:0;flex:1;font-size:0.9rem;line-height:1.5;">
+      We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.
+      <a href="/privacy" style="color:#4a9eff;text-decoration:underline;">Learn more</a>
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#4a9eff;color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.9rem;">Accept</button>
+      <button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.9rem;">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+function acceptCookies(){localStorage.setItem('cookie_consent','accepted');document.getElementById('cookie-banner').style.display='none';}
+function declineCookies(){localStorage.setItem('cookie_consent','declined');document.getElementById('cookie-banner').style.display='none';}
+if(!localStorage.getItem('cookie_consent')){document.getElementById('cookie-banner').style.display='block';}
+</script>
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Crect x='18' y='55' width='16' height='30' rx='3' fill='%232563eb'/%3E%3Crect x='42' y='35' width='16' height='50' rx='3' fill='%232563eb'/%3E%3Crect x='66' y='15' width='16' height='70' rx='3' fill='%232563eb'/%3E%3C/svg%3E">
+<title>Free CPM Calculator - Calculate Cost Per Mille Online</title>
+<meta name="description" content="Free CPM calculator to compute cost per mille. Calculate CPM, compare ad metrics, and optimize your advertising budget.">
+<link rel="canonical" href="https://cpmcalc.org/">
+<meta property="og:title" content="Free CPM Calculator - Calculate Cost Per Mille Online">
+<meta property="og:description" content="Instantly calculate CPM (cost per mille) with our free online calculator. Compare ad costs across platforms and optimize your campaigns.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CPM Calculator">
+<meta property="og:url" content="https://cpmcalc.org/">
+  <meta property="og:image" content="https://cpmcalc.org/images/cpm-calculator-hero.webp">
+<meta property="og:image:alt" content="CPM Calculator - Free Online Advertising Cost Calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free CPM Calculator - Calculate Cost Per Mille Online">
+  <meta name="twitter:description" content="Instantly calculate CPM (cost per mille) with our free online calculator. Compare ad costs across platforms and optimize your campaigns.">
+  <meta name="twitter:image" content="https://cpmcalc.org/images/cpm-calculator-hero.webp">
+<link rel="stylesheet" href="/css/style.css">
+<style>.form-group select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:0.95rem;background:#fff;}.currency-label{font-weight:normal;font-size:0.85em;color:var(--text-light);}</style>
+<script src="/js/currency.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CPM Calculator",
+  "url": "https://cpmcalc.org/",
+  "description": "Free online CPM calculator to compute cost per mille and cost per thousand impressions",
+  "applicationCategory": "FinanceApplication",
+  "offers": { "@type": "Offer", "price": "0" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://cpmcalc.org/"
+  }]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="./" class="logo"><span class="logo-icon">&#x1F4CA;</span> CPM Calculator</a>
+    <button class="mobile-toggle" onclick="document.querySelector('nav').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul>
+        <li><a href="./" class="active">Home</a></li>
+        <li class="has-dropdown">
+          <a href="calculators/youtube-cpm-calculator">Calculators</a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-label">Platform CPM</li>
+            <li><a href="calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></li>
+            <li><a href="calculators/tiktok-cpm-calculator">TikTok CPM Calculator</a></li>
+            <li><a href="calculators/instagram-cpm-calculator">Instagram CPM Calculator</a></li>
+            <li><a href="calculators/facebook-ads-cpm-calculator">Facebook Ads CPM</a></li>
+            <li><a href="calculators/google-ads-cpm-calculator">Google Ads CPM</a></li>
+            <li><a href="calculators/display-ads-cpm-calculator">Display Ads CPM</a></li>
+            <li class="dropdown-divider"></li>
+            <li class="dropdown-label">Revenue &amp; Rates</li>
+            <li><a href="calculators/ecpm-calculator">eCPM Calculator</a></li>
+            <li><a href="calculators/adsense-revenue-calculator">AdSense Revenue</a></li>
+            <li><a href="calculators/sponsored-post-calculator">Sponsored Post Rate</a></li>
+            <li><a href="calculators/influencer-rate-calculator">Influencer Rate</a></li>
+            <li><a href="calculators/youtube-rpm-calculator">YouTube RPM Calculator</a></li>
+            <li><a href="calculators/tiktok-rpm-calculator">TikTok RPM Calculator</a></li>
+            <li class="dropdown-divider"></li>
+            <li class="dropdown-label">Converters</li>
+            <li><a href="calculators/cpm-to-cpc-converter">CPM to CPC</a></li>
+            <li><a href="calculators/cpm-to-rpm-converter">CPM to RPM</a></li>
+            <li><a href="calculators/batch-cpm-calculator">Batch CPM Calculator</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="benchmarks/average-cpm-by-country">Benchmarks</a>
+          <ul class="dropdown-menu">
+            <li><a href="benchmarks/average-cpm-by-country">CPM by Country</a></li>
+            <li><a href="benchmarks/youtube-cpm-by-niche">YouTube CPM by Niche</a></li>
+            <li><a href="benchmarks/average-rpm-by-platform">RPM by Platform</a></li>
+          </ul>
+        </li>
+        <li><a href="blog/">Blog</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Free CPM Calculator</h1>
+    <p>Instantly calculate cost per mille (CPM) for your ad campaigns. Compare advertising costs across platforms and optimize your media buying strategy.</p>
+    <p class="subtitle">Free tools for media buyers, publishers, and content creators</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="calc-card">
+    <h2>Calculate CPM (Cost Per Mille)</h2>
+    <div class="form-group">
+      <label for="currency">Currency</label>
+      <select id="currency">
+        <option value="USD" selected>USD - US Dollar ($)</option>
+        <option value="EUR">EUR - Euro (€)</option>
+        <option value="GBP">GBP - British Pound (£)</option>
+        <option value="CNY">CNY - Chinese Yuan (¥)</option>
+        <option value="JPY">JPY - Japanese Yen (¥)</option>
+        <option value="INR">INR - Indian Rupee (₹)</option>
+        <option value="CAD">CAD - Canadian Dollar (C$)</option>
+        <option value="AUD">AUD - Australian Dollar (A$)</option>
+        <option value="BRL">BRL - Brazilian Real (R$)</option>
+        <option value="KRW">KRW - Korean Won (₩)</option>
+        <option value="MXN">MXN - Mexican Peso (MX$)</option>
+        <option value="SGD">SGD - Singapore Dollar (S$)</option>
+        <option value="CHF">CHF - Swiss Franc</option>
+        <option value="HKD">HKD - Hong Kong Dollar (HK$)</option>
+        <option value="ZAR">ZAR - South African Rand (R)</option>
+      </select>
+    <p style="font-size:0.8rem;color:var(--text-light);margin:4px 0 0;">Exchange rates fixed as of October 2026. For live rates, verify with your payment provider.</p>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="adSpend">Total Ad Spend <span class="currency-label">($)</span></label>
+        <input type="number" id="adSpend" placeholder="e.g. 500" min="0" step="0.01">
+      </div>
+      <div class="form-group">
+        <label for="impressions">Total Impressions</label>
+        <input type="number" id="impressions" placeholder="e.g. 100000" min="0" step="1">
+      </div>
+    </div>
+    <button class="btn btn-block" onclick="calculateCPM()">Calculate</button>
+    <div class="result-box" id="cpmResult">
+      <div class="result-label">Your CPM (Cost Per 1,000 Impressions)</div>
+      <div class="result-value" id="cpmValue">$0.00</div>
+      <div class="result-breakdown" id="cpmBreakdown"></div>
+    </div>
+  </div>
+</div>
+
+<section class="content-section bg-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>What Is CPM (Cost Per Mille)?</h2>
+    </div>
+    <div style="max-width:780px;margin:0 auto;">
+      <p><strong>CPM (Cost Per Mille)</strong> is the price advertisers pay for every 1,000 impressions (views) of an advertisement. "Mille" comes from the Latin word for thousand. It is the standard pricing model for brand awareness campaigns across display ads, video ads, social media, and programmatic advertising.</p>
+      <p>The formula is straightforward:</p>
+      <div class="formula-box" style="background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin:16px 0;font-family:'Courier New',monospace;font-size:1.05rem;text-align:center;">
+        CPM = (Total Ad Cost &divide; Total Impressions) &times; 1,000
+      </div>
+      <p>For example, if you spend $5,000 on a campaign that generates 2,500,000 impressions, your CPM is <strong>$2.00</strong>. This means you pay $2 for every 1,000 times your ad is shown.</p>
+      <p>CPM allows media buyers to compare the relative cost efficiency of different advertising channels, publishers, and campaigns regardless of their total scale. A lower CPM means more impressions per dollar spent, though it should always be evaluated alongside click-through rate (CTR) and conversion rate to assess true campaign effectiveness.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>CPM Calculators by Platform</h2>
+      <p>Platform-specific calculators with built-in benchmarks and average rates</p>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F3AC;</div>
+        <h3><a href="calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></h3>
+        <p>Calculate your YouTube ad CPM and compare against niche benchmarks. Finance niches average $15-$50 CPM while gaming averages $4-$15.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F4F1;</div>
+        <h3><a href="calculators/tiktok-cpm-calculator">TikTok CPM Calculator</a></h3>
+        <p>Estimate your TikTok advertising cost per thousand impressions. Average TikTok CPM ranges from $4-$13 in 2026.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F4B0;</div>
+        <h3><a href="calculators/ecpm-calculator">eCPM Calculator</a></h3>
+        <p>Calculate effective cost per mille for publishers. Compare revenue efficiency across ad networks and placements.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F4F8;</div>
+        <h3><a href="calculators/instagram-cpm-calculator">Instagram CPM Calculator</a></h3>
+        <p>Calculate Instagram ad CPM and benchmark against industry averages. Instagram CPM now exceeds Facebook as the primary Meta ad platform.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F464;</div>
+        <h3><a href="calculators/facebook-ads-cpm-calculator">Facebook Ads CPM Calculator</a></h3>
+        <p>Compute your Facebook advertising CPM and compare with 2026 benchmarks across 45+ countries.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F50D;</div>
+        <h3><a href="calculators/google-ads-cpm-calculator">Google Ads CPM Calculator</a></h3>
+        <p>Calculate Google Ads display and video CPM. Compare search vs. display network costs across industries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section bg-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>More Ad Metrics Calculators</h2>
+      <p>Additional tools for media buyers, publishers, and content creators</p>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F4B5;</div>
+        <h3><a href="calculators/adsense-revenue-calculator">AdSense Revenue Calculator</a></h3>
+        <p>Estimate your Google AdSense earnings based on page views, CTR, and CPC. Supports multiple niches and traffic sources.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F4DD;</div>
+        <h3><a href="calculators/sponsored-post-calculator">Sponsored Post Calculator</a></h3>
+        <p>Calculate the fair price for sponsored blog posts and articles based on traffic, domain authority, and niche.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F31F;</div>
+        <h3><a href="calculators/influencer-rate-calculator">Influencer Rate Calculator</a></h3>
+        <p>Determine fair influencer pricing by platform, follower count, and engagement rate. Covers nano to mega influencers.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F4BB;</div>
+        <h3><a href="calculators/display-ads-cpm-calculator">Display Ads CPM Calculator</a></h3>
+        <p>Calculate CPM specifically for display advertising campaigns including banner ads, native ads, and rich media.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F504;</div>
+        <h3><a href="calculators/cpm-to-cpc-converter">CPM to CPC Converter</a></h3>
+        <p>Convert between CPM and CPC using your campaign's click-through rate. Understand the true cost per click.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F504;</div>
+        <h3><a href="calculators/cpm-to-rpm-converter">CPM to RPM Converter</a></h3>
+        <p>Convert CPM (advertiser cost) to RPM (publisher revenue) accounting for fill rate and revenue share.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F4CB;</div>
+        <h3><a href="calculators/batch-cpm-calculator">Batch CPM Calculator</a></h3>
+        <p>Calculate CPM for multiple campaigns at once. Paste data, get results table, export to CSV/PDF.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>CPM Benchmarks &amp; Rate Data</h2>
+      <p>Up-to-date advertising cost benchmarks by country, niche, and platform</p>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F30D;</div>
+        <h3><a href="benchmarks/average-cpm-by-country">Average CPM by Country</a></h3>
+        <p>CPM rates across 30+ countries. US averages $23, India $1.50, UK $14. Compare tier 1, 2, and 3 markets.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F3AC;</div>
+        <h3><a href="benchmarks/youtube-cpm-by-niche">YouTube CPM by Niche</a></h3>
+        <p>Average YouTube CPM across 12+ content niches. Finance leads at $15-$50, gaming at $4-$15.</p>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">&#x1F4CA;</div>
+        <h3><a href="benchmarks/average-rpm-by-platform">Average RPM by Platform</a></h3>
+        <p>Compare creator RPM across YouTube, TikTok, Instagram, and Facebook. YouTube long-form leads at $4.30 average.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section bg-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>Latest from the Blog</h2>
+      <p>Guides, comparisons, and tips for optimizing your ad metrics</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,#667eea,#764ba2);">&#x1F4D6;</div>
+        <div class="blog-card-body">
+          <h3><a href="blog/cpm-formula-how-it-works">CPM Formula &amp; How It Works: Complete Guide</a></h3>
+          <p>Master the CPM formula with step-by-step examples and learn when to use CPM vs other pricing models.</p>
+          <div class="blog-meta">Oct 2026 &middot; 8 min read</div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,#f093fb,#f5576c);">&#x2696;</div>
+        <div class="blog-card-body">
+          <h3><a href="blog/cpm-vs-cpc-key-differences">CPM vs CPC: Key Differences for Media Buyers</a></h3>
+          <p>When should you buy impressions vs clicks? A data-driven comparison with real campaign examples.</p>
+          <div class="blog-meta">Oct 2026 &middot; 7 min read</div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,#4facfe,#00f2fe);">&#x1F4B0;</div>
+        <div class="blog-card-body">
+          <h3><a href="blog/what-is-ecpm-vs-rpm">What Is eCPM vs RPM? Understanding the Difference</a></h3>
+          <p>eCPM and RPM look similar but serve different purposes. Learn which metric matters for your role.</p>
+          <div class="blog-meta">Oct 2026 &middot; 6 min read</div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-20">
+      <a href="blog/" class="btn btn-outline">View All Articles</a>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container" style="max-width:780px;">
+    <h2>How to Calculate CPM: Step-by-Step</h2>
+    <h3>Step 1: Determine Your Total Ad Spend</h3>
+    <p>Include all costs associated with the campaign: media buy, creative production, and platform fees. For a pure CPM comparison, focus on the media cost alone.</p>
+    <h3>Step 2: Count Total Impressions</h3>
+    <p>Get the total number of impressions delivered. This data is available in your ad platform's dashboard (Google Ads, Meta Ads Manager, TikTok Ads Manager, etc.).</p>
+    <h3>Step 3: Apply the Formula</h3>
+    <p>Divide your total cost by total impressions, then multiply by 1,000. The result is your CPM &mdash; the cost per thousand impressions.</p>
+    <h3>Example Calculation</h3>
+    <p>A brand spends $8,000 on Facebook ads and receives 1,200,000 impressions:</p>
+    <div class="formula-box" style="background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin:16px 0;font-family:'Courier New',monospace;font-size:1.05rem;text-align:center;">
+      CPM = ($8,000 &divide; 1,200,000) &times; 1,000 = <strong>$6.67</strong>
+    </div>
+    <p>This means the brand pays $6.67 for every 1,000 times their ad appears. To evaluate whether this is competitive, compare it against the <a href="benchmarks/average-cpm-by-country">average CPM by country</a> and <a href="benchmarks/average-rpm-by-platform">platform benchmarks</a>.</p>
+
+    <h2>CPM vs Other Ad Metrics</h2>
+    <table class="data-table">
+      <thead>
+        <tr><th>Metric</th><th>What It Measures</th><th>Best For</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>CPM</strong></td><td>Cost per 1,000 impressions</td><td>Brand awareness, reach campaigns</td></tr>
+        <tr><td><strong>CPC</strong></td><td>Cost per click</td><td>Performance marketing, traffic</td></tr>
+        <tr><td><strong>CPA</strong></td><td>Cost per acquisition</td><td>Conversion-focused campaigns</td></tr>
+        <tr><td><strong>CTR</strong></td><td>Click-through rate (%)</td><td>Ad creative effectiveness</td></tr>
+        <tr><td><strong>RPM</strong></td><td>Revenue per 1,000 impressions</td><td>Publisher revenue measurement</td></tr>
+        <tr><td><strong>eCPM</strong></td><td>Effective cost per 1,000 impressions</td><td>Publisher revenue comparison</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Average CPM Rates in 2026</h2>
+    <p>CPM rates vary dramatically by platform, geography, and industry. Here are the current averages for major platforms:</p>
+    <ul>
+      <li><strong>Facebook Ads:</strong> $14-$18 average CPM in the US</li>
+      <li><strong>Instagram Ads:</strong> $10-$15 average CPM (surpassing Facebook in 2025)</li>
+      <li><strong>TikTok Ads:</strong> $4-$13 average CPM, rising 12% year-over-year</li>
+      <li><strong>Google Display:</strong> $2.80 average CPM</li>
+      <li><strong>YouTube:</strong> $5-$10 CPM for US/Canadian traffic</li>
+      <li><strong>Programmatic Display:</strong> $1-$5 CPM depending on quality tier</li>
+    </ul>
+    <p>For detailed breakdowns, see our <a href="benchmarks/average-cpm-by-country">CPM by country</a> and <a href="benchmarks/youtube-cpm-by-niche">YouTube CPM by niche</a> benchmarks.</p>
+
+    <h2>Tips to Lower Your CPM</h2>
+    <ol>
+      <li><strong>Broaden your audience:</strong> Narrow targeting increases CPM. Expand demographics and interests to reduce cost.</li>
+      <li><strong>Improve ad relevance:</strong> Higher relevance scores lead to lower costs on Meta and Google platforms.</li>
+      <li><strong>Test multiple creatives:</strong> Run 3-5 ad variations simultaneously. Let the algorithm optimize toward the lowest-CPM creative.</li>
+      <li><strong>Avoid peak competition:</strong> Q4 (Oct-Dec) sees the highest CPMs due to holiday advertising. January and February offer the lowest rates.</li>
+      <li><strong>Use lookalike audiences:</strong> On Meta platforms, 1-3% lookalike audiences often deliver lower CPMs than interest-based targeting.</li>
+      <li><strong>Consider alternative platforms:</strong> TikTok and Pinterest often offer 30-50% lower CPMs than Meta for comparable demographics.</li>
+    </ol>
+  </div>
+</section>
+
+
+    <p style="font-size:0.85rem;color:var(--text-light);margin-top:16px;"><strong>Sources:</strong> Exchange rates from <a href="https://open.er-api.com" target="_blank" rel="nofollow noopener noreferrer">open.er-api.com</a>. CPM benchmarks from <a href="benchmarks/average-cpm-by-country">industry reports</a>. Calculator uses standard CPM = (Cost / Impressions) × 1000 formula.</p>
+    <p style="font-size:0.85rem;color:var(--text-light);margin-top:24px;padding:16px;background:#f8f9fa;border-radius:var(--radius);border-left:3px solid var(--primary);">
+    <strong>Disclaimer:</strong> This calculator provides estimates for reference purposes only and does not constitute financial or business advice. Actual costs and results may vary based on market conditions, targeting, competition, and other factors. Exchange rates are approximate and not real-time financial data. Industry benchmarks are derived from publicly available third-party reports and should be interpreted with caution. Always consult with qualified advertising professionals before making budget decisions.
+    </p>
+
+  <footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>CPM Calculator</h4>
+      <p style="font-size:0.88rem;margin-bottom:10px;">Free online tools for calculating and optimizing advertising costs.</p>
+      <p style="font-size:0.88rem;margin-bottom:10px;"><a href="mailto:contact@cpmcalc.org" style="color:var(--primary);">contact@cpmcalc.org</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <ul>
+        <li><a href="calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></li>
+        <li><a href="calculators/tiktok-cpm-calculator">TikTok CPM Calculator</a></li>
+        <li><a href="calculators/ecpm-calculator">eCPM Calculator</a></li>
+        <li><a href="calculators/cpm-to-cpc-converter">CPM to CPC Converter</a></li>
+        <li><a href="calculators/adsense-revenue-calculator">AdSense Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Benchmarks</h4>
+      <ul>
+        <li><a href="benchmarks/average-cpm-by-country">CPM by Country</a></li>
+        <li><a href="benchmarks/youtube-cpm-by-niche">YouTube CPM by Niche</a></li>
+        <li><a href="benchmarks/average-rpm-by-platform">RPM by Platform</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="blog/cpm-formula-how-it-works">CPM Formula Guide</a></li>
+        <li><a href="blog/cpm-vs-cpc-key-differences">CPM vs CPC</a></li>
+        <li><a href="blog/what-is-ecpm-vs-rpm">eCPM vs RPM</a></li>
+        <li><a href="blog/how-to-calculate-cpm-for-ad-campaigns">How to Calculate CPM</a></li>
+        <li><a href="about">About Us</a></li>
+        <li><a href="contact">Contact</a></li>
+        <li><a href="privacy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 CPM Calculator. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="about">About</a>
+      <a href="contact">Contact</a>
+      <a href="privacy">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function calculateCPM() {
+  var spend = parseFloat(document.getElementById('adSpend').value);
+  var imps = parseFloat(document.getElementById('impressions').value);
+  var curr = document.getElementById('currency').value;
+  var sym = currencies[curr].symbol;
+  var rate = currencies[curr].rate;
+  var box = document.getElementById('cpmResult');
+  var val = document.getElementById('cpmValue');
+  var brk = document.getElementById('cpmBreakdown');
+
+  if (isNaN(spend) || isNaN(imps) || spend <= 0 || imps <= 0) {
+    alert('Please enter valid positive numbers for both fields.');
+    return;
+  }
+
+  var cpmUSD = (spend / imps) * 1000;
+  var cpmLocal = cpmUSD * rate;
+  val.textContent = sym + cpmLocal.toFixed(2);
+  brk.innerHTML = '<strong>CPM = (Ad Spend / Impressions) \u00d7 1,000</strong><br>' +
+    'Ad Spend: ' + sym + (spend * rate).toFixed(2) + '<br>' +
+    'Impressions: ' + imps.toLocaleString() + '<br>' +
+    'CPM: ' + sym + cpmLocal.toFixed(2) + (curr !== 'USD' ? ' (\u2248 $' + cpmUSD.toFixed(2) + ' USD)' : '');
+  box.classList.add('show');
+}
+  </script>
+<script>
+document.querySelectorAll('.has-dropdown > a').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    if (window.innerWidth <= 768) {
+      if (!this.parentElement.classList.contains('open')) {
+        e.preventDefault();
+        this.parentElement.classList.add('open');
+      }
+    }
+  });
+});
+</script>
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:20px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;">
+    <p style="margin:0;flex:1;font-size:0.9rem;line-height:1.5;">
+      We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.
+      <a href="/privacy" style="color:#4a9eff;text-decoration:underline;">Learn more</a>
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#4a9eff;color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.9rem;">Accept</button>
+      <button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.9rem;">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+function acceptCookies(){localStorage.setItem('cookie_consent','accepted');document.getElementById('cookie-banner').style.display='none';}
+function declineCookies(){localStorage.setItem('cookie_consent','declined');document.getElementById('cookie-banner').style.display='none';}
+if(!localStorage.getItem('cookie_consent')){document.getElementById('cookie-banner').style.display='block';}
+</script>
+</body>
+</html>

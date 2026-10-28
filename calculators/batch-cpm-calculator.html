@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Crect x='18' y='55' width='16' height='30' rx='3' fill='%232563eb'/%3E%3Crect x='42' y='35' width='16' height='50' rx='3' fill='%232563eb'/%3E%3Crect x='66' y='15' width='16' height='70' rx='3' fill='%232563eb'/%3E%3C/svg%3E">
+  <title>Batch CPM Calculator - Bulk Calculate CPM for Campaigns</title>
+  <meta name="description" content="Calculate CPM for multiple ad campaigns at once. Paste your data, get instant results in a table, and export to CSV or PDF. Free bulk CPM calculator.">
+  <link rel="canonical" href="https://cpmcalc.org/calculators/batch-cpm-calculator/">
+  <meta property="og:title" content="Batch CPM Calculator - Bulk Calculate CPM for Campaigns">
+  <meta property="og:description" content="Calculate CPM for multiple ad campaigns at once. Paste your data, get instant results in a table, and export to CSV or PDF. Free bulk CPM calculator.">
+  <meta property="og:type" content="website">
+<meta property="og:site_name" content="CPM Calculator">
+  <meta property="og:url" content="https://cpmcalc.org/calculators/batch-cpm-calculator/">
+  <meta property="og:image" content="https://cpmcalc.org/images/cpm-calculator-hero.webp">
+<meta property="og:image:alt" content="CPM Calculator - Free Online Advertising Cost Calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Batch CPM Calculator - Bulk Calculate CPM for Campaigns">
+  <meta name="twitter:description" content="Calculate CPM for multiple ad campaigns at once. Paste your data, get instant results in a table, and export to CSV or PDF. Free bulk CPM calculator.">
+  <meta name="twitter:image" content="https://cpmcalc.org/images/cpm-calculator-hero.webp">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Batch CPM Calculator",
+    "url": "https://cpmcalc.org/calculators/batch-cpm-calculator/",
+    "description": "Calculate CPM for multiple ad campaigns at once. Paste your data, get instant results in a table, and export to CSV or PDF.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Organization",
+      "name": "CPM Calculator"
+    },
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-26"
+  }
+  </script>
+<style>
+.batch-tabs { display:flex; gap:0; margin-bottom:20px; border-bottom:2px solid var(--border); }
+.batch-tab { padding:10px 20px; background:none; border:none; border-bottom:2px solid transparent; margin-bottom:-2px; cursor:pointer; font-size:0.9rem; color:var(--text-light); font-weight:500; }
+.batch-tab.active { color:var(--primary); border-bottom-color:var(--primary); }
+.batch-row { align-items:end; }
+.batch-summary { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:12px; margin-bottom:20px; }
+.batch-stat { background:var(--bg-alt); border-radius:var(--radius); padding:14px; text-align:center; }
+.batch-stat .stat-value { font-size:1.3rem; font-weight:700; color:var(--primary); }
+.batch-stat .stat-label { font-size:0.78rem; color:var(--text-light); margin-top:4px; }
+#batchInput { font-family: 'Courier New', monospace; font-size:0.9rem; resize:vertical; }
+.form-group select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:0.95rem;background:#fff;}
+@media print {
+  .site-header, .site-footer, .batch-tabs, .btn, .form-group, #pasteMode, #manualMode, h2 { display:none !important; }
+  #batchResults { display:block !important; }
+  .calc-card { box-shadow:none; border:1px solid #ddd; }
+}
+</style>
+<script src="/js/currency.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cpmcalc.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Batch CPM Calculator - Bulk Calculate CPM for Campaigns",
+      "item": "https://cpmcalc.org/calculators/batch-cpm-calculator/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../" class="logo"><span class="logo-icon">&#x1F4CA;</span> CPM Calculator</a>
+      <button class="mobile-toggle" onclick="document.querySelector('nav').classList.toggle('open')">&#9776;</button>
+      <nav>
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li class="has-dropdown">
+            <a href="../calculators/youtube-cpm-calculator" class="active">Calculators</a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-label">Platform CPM</li>
+              <li><a href="../calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></li>
+              <li><a href="../calculators/tiktok-cpm-calculator">TikTok CPM Calculator</a></li>
+              <li><a href="../calculators/instagram-cpm-calculator">Instagram CPM Calculator</a></li>
+              <li><a href="../calculators/facebook-ads-cpm-calculator">Facebook Ads CPM</a></li>
+              <li><a href="../calculators/google-ads-cpm-calculator">Google Ads CPM</a></li>
+              <li><a href="../calculators/display-ads-cpm-calculator">Display Ads CPM</a></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-label">Revenue &amp; Rates</li>
+              <li><a href="../calculators/ecpm-calculator">eCPM Calculator</a></li>
+              <li><a href="../calculators/adsense-revenue-calculator">AdSense Revenue</a></li>
+              <li><a href="../calculators/sponsored-post-calculator">Sponsored Post Rate</a></li>
+              <li><a href="../calculators/influencer-rate-calculator">Influencer Rate</a></li>
+              <li><a href="../calculators/youtube-rpm-calculator">YouTube RPM Calculator</a></li>
+              <li><a href="../calculators/tiktok-rpm-calculator">TikTok RPM Calculator</a></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-label">Converters</li>
+              <li><a href="../calculators/cpm-to-cpc-converter">CPM to CPC</a></li>
+              <li><a href="../calculators/cpm-to-rpm-converter">CPM to RPM</a></li>
+              <li><a href="../calculators/batch-cpm-calculator">Batch CPM Calculator</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="../benchmarks/average-cpm-by-country">Benchmarks</a>
+            <ul class="dropdown-menu">
+              <li><a href="../benchmarks/average-cpm-by-country">CPM by Country</a></li>
+              <li><a href="../benchmarks/youtube-cpm-by-niche">YouTube CPM by Niche</a></li>
+              <li><a href="../benchmarks/average-rpm-by-platform">RPM by Platform</a></li>
+            </ul>
+          </li>
+          <li><a href="../blog/">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="breadcrumb"><a href="../">Home</a> &rsaquo; <a href="../calculators/youtube-cpm-calculator">Calculators</a> &rsaquo; Batch CPM Calculator</div>
+    <h1>Batch CPM Calculator</h1>
+    <p>Paste multiple campaign data rows to calculate CPM for all of them at once. Export results to CSV or PDF for reporting.</p>
+  </section>
+
+  <div class="container">
+    <div class="calc-card">
+      <h2>Bulk Calculate CPM</h2>
+
+      <!-- Currency selector -->
+      <div class="form-group">
+        <label for="batchCurrency">Currency</label>
+        <select id="batchCurrency">
+          <option value="USD" selected>USD - US Dollar ($)</option>
+          <option value="EUR">EUR - Euro (€)</option>
+          <option value="GBP">GBP - British Pound (£)</option>
+          <option value="CNY">CNY - Chinese Yuan (¥)</option>
+          <option value="JPY">JPY - Japanese Yen (¥)</option>
+          <option value="INR">INR - Indian Rupee (₹)</option>
+          <option value="CAD">CAD - Canadian Dollar (C$)</option>
+          <option value="AUD">AUD - Australian Dollar (A$)</option>
+          <option value="BRL">BRL - Brazilian Real (R$)</option>
+          <option value="KRW">KRW - Korean Won (₩)</option>
+          <option value="MXN">MXN - Mexican Peso (MX$)</option>
+          <option value="SGD">SGD - Singapore Dollar (S$)</option>
+          <option value="CHF">CHF - Swiss Franc</option>
+          <option value="HKD">HKD - Hong Kong Dollar (HK$)</option>
+          <option value="ZAR">ZAR - South African Rand (R)</option>
+        </select>
+      <p style="font-size:0.8rem;color:var(--text-light);margin:4px 0 0;">Exchange rates fixed as of October 2026. For live rates, verify with your payment provider.</p>
+      </div>
+
+      <!-- Input mode tabs -->
+      <div class="batch-tabs">
+        <button class="batch-tab active" onclick="switchTab('paste')">Paste Data</button>
+        <button class="batch-tab" onclick="switchTab('manual')">Manual Entry</button>
+      </div>
+
+      <!-- Paste mode -->
+      <div id="pasteMode">
+        <div class="form-group">
+          <label for="batchInput">Paste your data (one campaign per line)</label>
+          <textarea id="batchInput" rows="10" placeholder="Campaign Name, Cost, Impressions&#10;Summer Campaign, 5000, 2500000&#10;Winter Campaign, 3200, 1800000&#10;Spring Campaign, 4100, 2100000&#10;&#10;Accepts: CSV (comma), TSV (tab), or space-separated&#10;Format: [Name], [Cost], [Impressions]"></textarea>
+        </div>
+        <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:16px;">
+          Supported formats: CSV, TSV, or space-separated. First column can be campaign name (optional). Numbers only in cost and impressions columns.
+        </p>
+      </div>
+
+      <!-- Manual entry mode -->
+      <div id="manualMode" style="display:none;">
+        <div id="manualRows">
+          <div class="batch-row form-row">
+            <div class="form-group" style="flex:2"><label>Campaign Name</label><input type="text" placeholder="Campaign 1"></div>
+            <div class="form-group"><label>Cost</label><input type="number" placeholder="5000" class="batch-cost"></div>
+            <div class="form-group"><label>Impressions</label><input type="number" placeholder="2500000" class="batch-imps"></div>
+          </div>
+        </div>
+        <button class="btn" onclick="addRow()" style="margin-bottom:16px;background:var(--bg-alt);color:var(--text);border:1px solid var(--border);">+ Add Row</button>
+      </div>
+
+      <!-- Action buttons -->
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <button class="btn btn-block" onclick="calculateBatch()" style="flex:1">Calculate All</button>
+        <button class="btn" onclick="clearBatch()" style="background:var(--bg-alt);color:var(--text);border:1px solid var(--border);">Clear</button>
+      </div>
+
+      <!-- Results section (hidden until calculated) -->
+      <div id="batchResults" style="display:none; margin-top:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px;">
+          <h3 style="margin:0;">Results</h3>
+          <div style="display:flex;gap:8px;">
+            <button class="btn" onclick="exportCSV()" style="font-size:0.85rem;padding:6px 14px;background:var(--success);color:#fff;">Export CSV</button>
+            <button class="btn" onclick="exportPDF()" style="font-size:0.85rem;padding:6px 14px;background:#ef4444;color:#fff;">Print / PDF</button>
+          </div>
+        </div>
+
+        <!-- Summary stats -->
+        <div class="batch-summary" id="batchSummary"></div>
+
+        <!-- Results table -->
+        <div style="overflow-x:auto;">
+          <table class="data-table" id="resultsTable">
+            <thead>
+              <tr><th>#</th><th>Campaign</th><th>Cost</th><th>Impressions</th><th>CPM</th></tr>
+            </thead>
+            <tbody id="resultsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <div class="container" style="max-width:780px;">
+      <h2>Why Calculate CPM in Bulk?</h2>
+      <p>Managing a single campaign is straightforward, but most media buyers and agencies juggle dozens of campaigns simultaneously across multiple platforms. Calculating CPM for each campaign individually is time-consuming and error-prone. A batch CPM calculator lets you process all your campaign data at once, giving you an instant overview of cost efficiency across your entire portfolio.</p>
+      <p>Common use cases for bulk CPM calculation include:</p>
+      <ul>
+        <li><strong>Agency reporting:</strong> Agencies managing campaigns for multiple clients need to compare CPM across accounts quickly. Pasting all campaign data into a batch calculator saves time and produces consistent, exportable reports.</li>
+        <li><strong>Campaign comparison:</strong> When running the same campaign across different platforms (YouTube, TikTok, Facebook, Instagram), bulk CPM calculation reveals which channel delivers the most impressions per dollar.</li>
+        <li><strong>A/B testing analysis:</strong> After splitting a campaign into test groups, calculating CPM for each variant helps determine which creative or targeting strategy delivers cheaper reach.</li>
+        <li><strong>Budget reallocation:</strong> By seeing CPM side by side for all active campaigns, you can identify underperforming campaigns with high CPM and shift budget toward more efficient ones.</li>
+        <li><strong>Historical trend tracking:</strong> Exporting batch CPM results over time lets you track whether your cost efficiency is improving or deteriorating quarter over quarter.</li>
+      </ul>
+
+      <h2>How to Format Your Data</h2>
+      <p>The batch CPM calculator accepts multiple input formats to make it easy to paste data from any source. Here are the supported formats:</p>
+
+      <h3>CSV (Comma-Separated Values)</h3>
+      <p>The most common format. Separate each field with a comma. You can include or omit the campaign name:</p>
+      <div class="formula-box" style="text-align:left;font-size:0.85rem;line-height:1.6;">
+Summer Campaign, 5000, 2500000<br>
+Winter Campaign, 3200, 1800000<br>
+Spring Campaign, 4100, 2100000
+      </div>
+      <p>With campaign names:</p>
+      <div class="formula-box" style="text-align:left;font-size:0.85rem;line-height:1.6;">
+Brand Awareness Q4, 12000, 4800000<br>
+Product Launch, 8500, 2100000<br>
+Holiday Promo, 15000, 6200000
+      </div>
+
+      <h3>TSV (Tab-Separated Values)</h3>
+      <p>If you copy data directly from a spreadsheet, it will typically be tab-separated. The calculator handles this automatically:</p>
+      <div class="formula-box" style="text-align:left;font-size:0.85rem;line-height:1.6;">
+Campaign A	5000	2500000<br>
+Campaign B	3200	1800000
+      </div>
+
+      <h3>Two-Column Format (No Campaign Names)</h3>
+      <p>If you only have cost and impressions data without campaign names, paste just two columns. The calculator will label rows automatically:</p>
+      <div class="formula-box" style="text-align:left;font-size:0.85rem;line-height:1.6;">
+5000, 2500000<br>
+3200, 1800000<br>
+4100, 2100000
+      </div>
+
+      <div class="key-point">
+        <strong>Tip:</strong> You can also use the Manual Entry tab to type data row by row if your data is not in a copyable format. Click "+ Add Row" to add as many campaigns as you need.
+      </div>
+
+      <h2>Understanding Your Batch Results</h2>
+      <p>After calculating CPM for all your campaigns, the results table shows each campaign's cost, impressions, and CPM side by side. The summary statistics at the top provide key insights:</p>
+
+      <h3>Average CPM</h3>
+      <p>The mean CPM across all campaigns in your batch. This represents your overall cost efficiency. If your average CPM is significantly higher than platform benchmarks (for example, above $14 for Facebook or above $10 for YouTube), you may need to broaden your targeting or improve ad relevance.</p>
+
+      <h3>Min CPM</h3>
+      <p>The lowest CPM in your batch. This identifies your most cost-efficient campaign in terms of raw reach. However, the cheapest CPM is not always the best outcome if that campaign targets a low-value audience or generates poor engagement.</p>
+
+      <h3>Max CPM</h3>
+      <p>The highest CPM in your batch. This flags your most expensive campaign for reach. A high CPM may be justified if the campaign targets a premium audience in a high-value niche (like finance or B2B) or if it drives strong conversions despite higher reach costs.</p>
+
+      <h3>Total Cost and Total Impressions</h3>
+      <p>These aggregate figures show the combined spend and reach across all campaigns. Use them to understand the overall scale of your advertising investment and to calculate a blended CPM for the entire batch.</p>
+
+      <h3>Exporting Results</h3>
+      <p>Click "Export CSV" to download your results as a spreadsheet-compatible file. This is ideal for inserting into client reports, sharing with team members, or archiving historical data. Use "Print / PDF" to generate a clean, print-ready version of your results table for presentations or documentation.</p>
+
+      <div class="related-links">
+        <h3>Related Tools &amp; Resources</h3>
+        <ul>
+          <li><a href="../calculators/youtube-cpm-calculator">YouTube CPM Calculator - Platform-Specific CPM Tool</a></li>
+          <li><a href="../calculators/tiktok-cpm-calculator">TikTok CPM Calculator - Calculate TikTok Ad Costs</a></li>
+          <li><a href="../calculators/ecpm-calculator">eCPM Calculator - Effective Cost Per Mille for Publishers</a></li>
+          <li><a href="../benchmarks/average-cpm-by-country">CPM by Country - Global CPM Benchmarks</a></li>
+          <li><a href="../calculators/cpm-to-cpc-converter">CPM to CPC Converter - Convert Between Cost Models</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  
+    <p style="font-size:0.85rem;color:var(--text-light);margin-top:16px;"><strong>Methodology:</strong> Batch CPM Calculator uses the standard formula CPM = (Total Cost / Total Impressions) × 1000. Supports multiple input formats for flexibility. Exchange rates from <a href="https://open.er-api.com" target="_blank" rel="nofollow noopener noreferrer">open.er-api.com</a>.
+    <p style="font-size:0.85rem;color:var(--text-light);margin-top:24px;padding:16px;background:#f8f9fa;border-radius:var(--radius);border-left:3px solid var(--primary);">
+    <strong>Disclaimer:</strong> This calculator provides estimates for reference purposes only and does not constitute financial or business advice. Actual costs and results may vary based on market conditions, targeting, competition, and other factors. Exchange rates are approximate and not real-time financial data. Industry benchmarks are derived from publicly available third-party reports and should be interpreted with caution. Always consult with qualified advertising professionals before making budget decisions.
+    </p>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>CPM Calculator</h4>
+        <p style="font-size:0.88rem;margin-bottom:10px;">Free online tools for calculating and optimizing advertising costs.</p>
+      <p style="font-size:0.88rem;margin-bottom:10px;"><a href="mailto:contact@cpmcalc.org" style="color:var(--primary);">contact@cpmcalc.org</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul>
+          <li><a href="../calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></li>
+          <li><a href="../calculators/tiktok-cpm-calculator">TikTok CPM Calculator</a></li>
+          <li><a href="../calculators/ecpm-calculator">eCPM Calculator</a></li>
+          <li><a href="../calculators/cpm-to-cpc-converter">CPM to CPC Converter</a></li>
+          <li><a href="../calculators/adsense-revenue-calculator">AdSense Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Benchmarks</h4>
+        <ul>
+          <li><a href="../benchmarks/average-cpm-by-country">CPM by Country</a></li>
+          <li><a href="../benchmarks/youtube-cpm-by-niche">YouTube CPM by Niche</a></li>
+          <li><a href="../benchmarks/average-rpm-by-platform">RPM by Platform</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog/cpm-formula-how-it-works">CPM Formula Guide</a></li>
+          <li><a href="../blog/cpm-vs-cpc-key-differences">CPM vs CPC</a></li>
+          <li><a href="../blog/what-is-ecpm-vs-rpm">eCPM vs RPM</a></li>
+          <li><a href="../blog/how-to-calculate-cpm-for-ad-campaigns">How to Calculate CPM</a></li>
+          <li><a href="../about">About Us</a></li>
+          <li><a href="../contact">Contact</a></li>
+          <li><a href="../privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CPM Calculator. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="../about">About</a>
+        <a href="../contact">Contact</a>
+        <a href="../privacy">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+var batchData = [];
+
+function switchTab(tab) {
+  document.querySelectorAll('.batch-tab').forEach(function(t) { t.classList.remove('active'); });
+  event.target.classList.add('active');
+  document.getElementById('pasteMode').style.display = tab === 'paste' ? 'block' : 'none';
+  document.getElementById('manualMode').style.display = tab === 'manual' ? 'block' : 'none';
+}
+
+function addRow() {
+  var container = document.getElementById('manualRows');
+  var idx = container.children.length + 1;
+  var div = document.createElement('div');
+  div.className = 'batch-row form-row';
+  div.innerHTML = '<div class="form-group" style="flex:2"><input type="text" placeholder="Campaign ' + idx + '"></div><div class="form-group"><input type="number" placeholder="5000" class="batch-cost"></div><div class="form-group"><input type="number" placeholder="2500000" class="batch-imps"></div>';
+  container.appendChild(div);
+}
+
+function calculateBatch() {
+  var curr = document.getElementById('batchCurrency').value;
+  var sym = currencies[curr].symbol;
+  var rate = currencies[curr].rate;
+  var rows = [];
+  var pasteActive = document.getElementById('pasteMode').style.display !== 'none';
+
+  if (pasteActive) {
+    var text = document.getElementById('batchInput').value.trim();
+    if (!text) { alert('Please paste your data.'); return; }
+    var lines = text.split('\n');
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i].trim();
+      if (!line) continue;
+      var parts = line.split(/[,\t;]+|\s{2,}/).map(function(s) { return s.trim(); });
+      if (parts.length < 2) continue;
+      var name, cost, imps;
+      if (parts.length >= 3) {
+        name = parts[0];
+        cost = parseFloat(parts[1].replace(/[^0-9.]/g, ''));
+        imps = parseFloat(parts[2].replace(/[^0-9.]/g, ''));
+      } else {
+        name = 'Row ' + (i + 1);
+        cost = parseFloat(parts[0].replace(/[^0-9.]/g, ''));
+        imps = parseFloat(parts[1].replace(/[^0-9.]/g, ''));
+      }
+      if (!isNaN(cost) && !isNaN(imps) && cost > 0 && imps > 0) {
+        rows.push({ name: name, cost: cost, imps: imps });
+      }
+    }
+  } else {
+    var rowEls = document.querySelectorAll('#manualRows .batch-row');
+    rowEls.forEach(function(row, i) {
+      var inputs = row.querySelectorAll('input');
+      var name = inputs[0].value || 'Campaign ' + (i + 1);
+      var cost = parseFloat(inputs[1].value);
+      var imps = parseFloat(inputs[2].value);
+      if (!isNaN(cost) && !isNaN(imps) && cost > 0 && imps > 0) {
+        rows.push({ name: name, cost: cost, imps: imps });
+      }
+    });
+  }
+
+  if (rows.length === 0) { alert('No valid data rows found. Check your format.'); return; }
+
+  batchData = [];
+  var tbody = document.getElementById('resultsBody');
+  tbody.innerHTML = '';
+  var totalCost = 0, totalImps = 0, cpms = [];
+
+  for (var j = 0; j < rows.length; j++) {
+    var r = rows[j];
+    var cpmUSD = (r.cost / r.imps) * 1000;
+    var cpmLocal = cpmUSD * rate;
+    var costLocal = r.cost * rate;
+    batchData.push({ name: r.name, cost: costLocal, imps: r.imps, cpm: cpmLocal, cpmUSD: cpmUSD });
+    totalCost += costLocal;
+    totalImps += r.imps;
+    cpms.push(cpmLocal);
+
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td>' + (j + 1) + '</td><td>' + r.name + '</td><td>' + sym + costLocal.toFixed(2) + '</td><td>' + r.imps.toLocaleString() + '</td><td><strong>' + sym + cpmLocal.toFixed(2) + '</strong></td>';
+    tbody.appendChild(tr);
+  }
+
+  var avgCpm = cpms.reduce(function(a, b) { return a + b; }, 0) / cpms.length;
+  var minCpm = Math.min.apply(null, cpms);
+  var maxCpm = Math.max.apply(null, cpms);
+
+  document.getElementById('batchSummary').innerHTML =
+    '<div class="batch-stat"><div class="stat-value">' + rows.length + '</div><div class="stat-label">Campaigns</div></div>' +
+    '<div class="batch-stat"><div class="stat-value">' + sym + avgCpm.toFixed(2) + '</div><div class="stat-label">Avg CPM</div></div>' +
+    '<div class="batch-stat"><div class="stat-value">' + sym + minCpm.toFixed(2) + '</div><div class="stat-label">Min CPM</div></div>' +
+    '<div class="batch-stat"><div class="stat-value">' + sym + maxCpm.toFixed(2) + '</div><div class="stat-label">Max CPM</div></div>' +
+    '<div class="batch-stat"><div class="stat-value">' + sym + totalCost.toFixed(0) + '</div><div class="stat-label">Total Cost</div></div>' +
+    '<div class="batch-stat"><div class="stat-value">' + totalImps.toLocaleString() + '</div><div class="stat-label">Total Impressions</div></div>';
+
+  document.getElementById('batchResults').style.display = 'block';
+}
+
+function clearBatch() {
+  document.getElementById('batchInput').value = '';
+  document.getElementById('batchResults').style.display = 'none';
+  batchData = [];
+}
+
+function exportCSV() {
+  if (batchData.length === 0) return;
+  var curr = document.getElementById('batchCurrency').value;
+  var sym = currencies[curr].symbol;
+  var csv = 'No,Campaign,Cost,Impressions,CPM\n';
+  for (var i = 0; i < batchData.length; i++) {
+    var d = batchData[i];
+    csv += (i + 1) + ',"' + d.name + '",' + sym + d.cost.toFixed(2) + ',' + d.imps + ',' + sym + d.cpm.toFixed(2) + '\n';
+  }
+  var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  var link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'cpm-batch-results.csv';
+  link.click();
+}
+
+function exportPDF() {
+  window.print();
+}
+</script>
+<script>
+document.querySelectorAll('.has-dropdown > a').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    if (window.innerWidth <= 768) {
+      if (!this.parentElement.classList.contains('open')) {
+        e.preventDefault();
+        this.parentElement.classList.add('open');
+      }
+    }
+  });
+});
+</script>
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:20px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;">
+    <p style="margin:0;flex:1;font-size:0.9rem;line-height:1.5;">
+      We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.
+      <a href="/privacy" style="color:#4a9eff;text-decoration:underline;">Learn more</a>
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#4a9eff;color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.9rem;">Accept</button>
+      <button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.9rem;">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+function acceptCookies(){localStorage.setItem('cookie_consent','accepted');document.getElementById('cookie-banner').style.display='none';}
+function declineCookies(){localStorage.setItem('cookie_consent','declined');document.getElementById('cookie-banner').style.display='none';}
+if(!localStorage.getItem('cookie_consent')){document.getElementById('cookie-banner').style.display='block';}
+</script>
+</body>
+</html>

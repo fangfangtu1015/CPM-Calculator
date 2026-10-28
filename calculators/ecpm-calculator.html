@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Crect x='18' y='55' width='16' height='30' rx='3' fill='%232563eb'/%3E%3Crect x='42' y='35' width='16' height='50' rx='3' fill='%232563eb'/%3E%3Crect x='66' y='15' width='16' height='70' rx='3' fill='%232563eb'/%3E%3C/svg%3E">
+  <title>eCPM Calculator - Calculate Effective Cost Per Mille</title>
+  <meta name="description" content="Free eCPM Calculator. Calculate your effective cost per mille from total revenue and impressions. Understand eCPM vs CPM and learn how to increase your eCPM.">
+  <link rel="canonical" href="https://cpmcalc.org/calculators/ecpm-calculator/">
+  <meta property="og:title" content="eCPM Calculator - Calculate Effective Cost Per Mille">
+  <meta property="og:description" content="Calculate your effective cost per mille (eCPM) from total revenue and impressions. Learn the difference between eCPM, CPM, and RPM.">
+  <meta property="og:type" content="website">
+<meta property="og:site_name" content="CPM Calculator">
+  <meta property="og:url" content="https://cpmcalc.org/calculators/ecpm-calculator/">
+  <meta property="og:image" content="https://cpmcalc.org/images/ad-metrics-comparison.webp">
+<meta property="og:image:alt" content="CPM Calculator - Free Online Advertising Cost Calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="eCPM Calculator - Calculate Effective Cost Per Mille">
+  <meta name="twitter:description" content="Calculate your effective cost per mille (eCPM) from total revenue and impressions. Learn the difference between eCPM, CPM, and RPM.">
+  <meta name="twitter:image" content="https://cpmcalc.org/images/ad-metrics-comparison.webp">
+  <link rel="stylesheet" href="/css/style.css">
+<style>.form-group select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:0.95rem;background:#fff;}.currency-label{font-weight:normal;font-size:0.85em;color:var(--text-light);}</style>
+<script src="/js/currency.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "eCPM Calculator",
+    "url": "https://cpmcalc.org/calculators/ecpm-calculator/",
+    "description": "Calculate your effective cost per mille (eCPM) based on total revenue and impressions.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All"
+  }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cpmcalc.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "eCPM Calculator - Calculate Effective Cost Per Mille",
+      "item": "https://cpmcalc.org/calculators/ecpm-calculator/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../" class="logo"><span class="logo-icon">&#x1F4CA;</span> CPM Calculator</a>
+      <button class="mobile-toggle" onclick="document.querySelector('nav').classList.toggle('open')">&#9776;</button>
+      <nav>
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li class="has-dropdown">
+            <a href="../calculators/youtube-cpm-calculator" class="active">Calculators</a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-label">Platform CPM</li>
+              <li><a href="../calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></li>
+              <li><a href="../calculators/tiktok-cpm-calculator">TikTok CPM Calculator</a></li>
+              <li><a href="../calculators/instagram-cpm-calculator">Instagram CPM Calculator</a></li>
+              <li><a href="../calculators/facebook-ads-cpm-calculator">Facebook Ads CPM</a></li>
+              <li><a href="../calculators/google-ads-cpm-calculator">Google Ads CPM</a></li>
+              <li><a href="../calculators/display-ads-cpm-calculator">Display Ads CPM</a></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-label">Revenue &amp; Rates</li>
+              <li><a href="../calculators/ecpm-calculator">eCPM Calculator</a></li>
+              <li><a href="../calculators/adsense-revenue-calculator">AdSense Revenue</a></li>
+              <li><a href="../calculators/sponsored-post-calculator">Sponsored Post Rate</a></li>
+              <li><a href="../calculators/influencer-rate-calculator">Influencer Rate</a></li>
+              <li><a href="../calculators/youtube-rpm-calculator">YouTube RPM Calculator</a></li>
+              <li><a href="../calculators/tiktok-rpm-calculator">TikTok RPM Calculator</a></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-label">Converters</li>
+              <li><a href="../calculators/cpm-to-cpc-converter">CPM to CPC</a></li>
+              <li><a href="../calculators/cpm-to-rpm-converter">CPM to RPM</a></li>
+              <li><a href="../calculators/batch-cpm-calculator">Batch CPM Calculator</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="../benchmarks/average-cpm-by-country">Benchmarks</a>
+            <ul class="dropdown-menu">
+              <li><a href="../benchmarks/average-cpm-by-country">CPM by Country</a></li>
+              <li><a href="../benchmarks/youtube-cpm-by-niche">YouTube CPM by Niche</a></li>
+              <li><a href="../benchmarks/average-rpm-by-platform">RPM by Platform</a></li>
+            </ul>
+          </li>
+          <li><a href="../blog/">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="breadcrumb"><a href="../">Home</a> &rsaquo; <a href="../calculators/youtube-cpm-calculator">Calculators</a> &rsaquo; eCPM Calculator</div>
+    <h1>eCPM Calculator</h1>
+    <p>Calculate your effective cost per mille (eCPM) to understand how much revenue you are generating per 1,000 impressions from the publisher perspective.</p>
+  </section>
+
+  <div class="container">
+    <div class="calc-card">
+      <h2>Calculate Your eCPM</h2>
+      <div class="form-group">
+        <label for="currency">Currency</label>
+        <select id="currency">
+          <option value="USD" selected>USD - US Dollar ($)</option>
+          <option value="EUR">EUR - Euro (€)</option>
+          <option value="GBP">GBP - British Pound (£)</option>
+          <option value="CNY">CNY - Chinese Yuan (¥)</option>
+          <option value="JPY">JPY - Japanese Yen (¥)</option>
+          <option value="INR">INR - Indian Rupee (₹)</option>
+          <option value="CAD">CAD - Canadian Dollar (C$)</option>
+          <option value="AUD">AUD - Australian Dollar (A$)</option>
+          <option value="BRL">BRL - Brazilian Real (R$)</option>
+          <option value="KRW">KRW - Korean Won (₩)</option>
+          <option value="MXN">MXN - Mexican Peso (MX$)</option>
+          <option value="SGD">SGD - Singapore Dollar (S$)</option>
+          <option value="CHF">CHF - Swiss Franc</option>
+          <option value="HKD">HKD - Hong Kong Dollar (HK$)</option>
+          <option value="ZAR">ZAR - South African Rand (R)</option>
+        </select>
+      <p style="font-size:0.8rem;color:var(--text-light);margin:4px 0 0;">Exchange rates fixed as of October 2026. For live rates, verify with your payment provider.</p>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="revenue">Total Revenue <span class="currency-label">($)</span></label>
+          <input type="number" id="revenue" placeholder="e.g. 250" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="impressions">Total Impressions</label>
+          <input type="number" id="impressions" placeholder="e.g. 100000" min="0" step="1">
+        </div>
+      </div>
+      <button class="btn btn-block" onclick="calculateECPM()">Calculate</button>
+      <div class="result-box" id="resultBox">
+        <div class="result-value" id="resultValue">$0.00</div>
+        <div class="result-label">Your eCPM</div>
+        <div class="result-breakdown" id="resultBreakdown"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <div class="container" style="max-width:780px;">
+      <h2>What Is eCPM?</h2>
+      <p>eCPM stands for "effective Cost Per Mille" and represents the revenue a publisher earns per 1,000 impressions, regardless of the billing model used by the advertiser. While CPM measures what advertisers pay, eCPM measures what publishers earn. This distinction is critical for anyone running a website, app, or YouTube channel that generates advertising revenue.</p>
+      <p>The basic eCPM formula is:</p>
+      <div class="formula-box">eCPM = (Total Revenue / Total Impressions) &times; 1,000</div>
+      <p>For example, if your website generates $250 in ad revenue from 100,000 impressions, your eCPM would be ($250 / 100,000) &times; 1,000 = $2.50. This means you earn $2.50 for every 1,000 page views or ad impressions served.</p>
+
+      <h2>eCPM vs. CPM: What Is the Difference?</h2>
+      <p>The difference between eCPM and CPM comes down to perspective:</p>
+      <ul>
+        <li><strong>CPM (Cost Per Mille):</strong> The amount an <em>advertiser pays</em> per 1,000 impressions. This is a cost metric used in campaign budgeting.</li>
+        <li><strong>eCPM (Effective Cost Per Mille):</strong> The amount a <em>publisher earns</em> per 1,000 impressions. This is a revenue metric used to measure monetization efficiency.</li>
+      </ul>
+      <div class="key-point">
+        <strong>Key Insight:</strong> A publisher's eCPM will almost always be lower than the advertiser's CPM because the difference is captured by ad networks, exchanges, and intermediaries. For example, an advertiser might pay a $10 CPM, but after platform fees and revenue sharing, the publisher might see an eCPM of $5.50 (with YouTube's 55% revenue share to creators).
+      </div>
+
+      <h2>eCPM Formulas for Different Billing Models</h2>
+      <p>Not all ads are billed on a CPM basis. Many advertisers pay per click (CPC) or per acquisition (CPA). Publishers can still calculate their effective CPM for these models using the following formulas:</p>
+
+      <h3>For CPC-Based Campaigns</h3>
+      <div class="formula-box">eCPM = CTR &times; CPC &times; 1,000</div>
+      <p>Where CTR is the click-through rate (as a decimal) and CPC is the cost per click. For example, if your CTR is 2% (0.02) and the CPC is $0.50, then eCPM = 0.02 &times; $0.50 &times; 1,000 = $1.00.</p>
+
+      <h3>For CPA-Based Campaigns</h3>
+      <div class="formula-box">eCPM = Conversion Rate &times; CPA &times; 1,000</div>
+      <p>Where Conversion Rate is the percentage of impressions that result in a conversion (as a decimal) and CPA is the cost per acquisition. For example, if your conversion rate is 0.5% (0.005) and CPA is $20, then eCPM = 0.005 &times; $20 &times; 1,000 = $10.00.</p>
+
+      <h2>How eCPM Is Used in Ad Bidding</h2>
+      <p>eCPM is the universal metric that ad exchanges and header bidding platforms use to compare bids across different billing models. When a user loads a webpage, the ad exchange receives bids from multiple advertisers - some bidding on a CPM basis, others on CPC or CPA. The exchange converts all bids to eCPM to determine which ad wins the auction. The advertiser with the highest eCPM wins the impression, regardless of their original billing model.</p>
+      <p>This is why understanding eCPM is essential for publishers. It allows you to compare the true revenue-generating power of different ad networks, demand sources, and monetization strategies on an apples-to-apples basis.</p>
+
+      <h2>How to Increase Your eCPM</h2>
+      <ul>
+        <li><strong>Improve ad placement:</strong> Above-the-fold placements and in-content positions typically generate higher eCPMs than footer or sidebar ads.</li>
+        <li><strong>Optimize ad formats:</strong> Video ads and native ads generally produce higher eCPMs than standard banner ads.</li>
+        <li><strong>Use header bidding:</strong> Header bidding increases competition for your impressions by allowing multiple demand sources to bid simultaneously.</li>
+        <li><strong>Target high-value geographies:</strong> Traffic from the US, UK, Canada, and Australia generates significantly higher eCPMs.</li>
+        <li><strong>Improve page speed:</strong> Faster-loading pages reduce impression loss and increase viewability, both of which boost eCPM.</li>
+        <li><strong>Test multiple ad networks:</strong> Different networks perform better for different niches and traffic sources. A/B testing helps you find the optimal mix.</li>
+        <li><strong>Focus on quality traffic:</strong> Organic search traffic typically generates higher eCPMs than social media traffic because users are more engaged.</li>
+      </ul>
+
+      <h2>eCPM Benchmarks by Platform (2026)</h2>
+      <table class="data-table">
+        <thead>
+          <tr><th>Platform</th><th>Typical eCPM Range</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>YouTube (Long-form)</td><td>$2 - $12</td></tr>
+          <tr><td>YouTube Shorts</td><td>$0.01 - $0.10</td></tr>
+          <tr><td>Display Websites (US)</td><td>$1 - $10</td></tr>
+          <tr><td>Mobile Apps</td><td>$0.50 - $5</td></tr>
+          <tr><td>Connected TV</td><td>$15 - $40</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-top:8px;"><strong>Sources:</strong> YouTube eCPM from <a href="https://www.digitalapplied.com/blog/youtube-statistics-2026-platform-data-points" target="_blank" rel="nofollow noopener noreferrer">Digital Applied</a> 2026; mobile app eCPM from <a href="https://www.digitalapplied.com/blog/youtube-statistics-2026-platform-data-points" target="_blank" rel="nofollow noopener noreferrer">Digital Applied</a> In-App Advertising 2025; CTV eCPM from <a href="https://zeely.ai/blog/which-social-media-platform-pays-the-most/" target="_blank" rel="nofollow noopener noreferrer">Zeely</a> Platform Payout Comparison 2026. Revenue share percentages are platform-reported. Actual eCPM varies based on fill rate, ad quality, and audience geography.</p>
+
+      <div class="related-links">
+        <h3>Related Tools &amp; Resources</h3>
+        <ul>
+          <li><a href="../calculators/cpm-to-rpm-converter">CPM to RPM Converter</a></li>
+          <li><a href="../calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></li>
+          <li><a href="../blog/what-is-ecpm-vs-rpm">eCPM vs RPM: What Is the Difference?</a></li>
+          <li><a href="../blog/cpm-formula-how-it-works">CPM Formula: How It Works</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  
+    <p style="font-size:0.85rem;color:var(--text-light);margin-top:24px;padding:16px;background:#f8f9fa;border-radius:var(--radius);border-left:3px solid var(--primary);">
+    <strong>Disclaimer:</strong> This calculator provides estimates for reference purposes only and does not constitute financial or business advice. Actual costs and results may vary based on market conditions, targeting, competition, and other factors. Exchange rates are approximate and not real-time financial data. Industry benchmarks are derived from publicly available third-party reports and should be interpreted with caution. Always consult with qualified advertising professionals before making budget decisions.
+    </p>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>CPM Calculator</h4>
+        <p style="font-size:0.88rem;margin-bottom:10px;">Free online tools for calculating and optimizing advertising costs.</p>
+      <p style="font-size:0.88rem;margin-bottom:10px;"><a href="mailto:contact@cpmcalc.org" style="color:var(--primary);">contact@cpmcalc.org</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul>
+          <li><a href="../calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></li>
+          <li><a href="../calculators/tiktok-cpm-calculator">TikTok CPM Calculator</a></li>
+          <li><a href="../calculators/ecpm-calculator">eCPM Calculator</a></li>
+          <li><a href="../calculators/cpm-to-cpc-converter">CPM to CPC Converter</a></li>
+          <li><a href="../calculators/adsense-revenue-calculator">AdSense Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Benchmarks</h4>
+        <ul>
+          <li><a href="../benchmarks/average-cpm-by-country">CPM by Country</a></li>
+          <li><a href="../benchmarks/youtube-cpm-by-niche">YouTube CPM by Niche</a></li>
+          <li><a href="../benchmarks/average-rpm-by-platform">RPM by Platform</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog/cpm-formula-how-it-works">CPM Formula Guide</a></li>
+          <li><a href="../blog/cpm-vs-cpc-key-differences">CPM vs CPC</a></li>
+          <li><a href="../blog/what-is-ecpm-vs-rpm">eCPM vs RPM</a></li>
+          <li><a href="../blog/how-to-calculate-cpm-for-ad-campaigns">How to Calculate CPM</a></li>
+          <li><a href="../about">About Us</a></li>
+          <li><a href="../contact">Contact</a></li>
+          <li><a href="../privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CPM Calculator. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="../about">About</a>
+        <a href="../contact">Contact</a>
+        <a href="../privacy">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+        function calculateECPM() {
+      var revenue = parseFloat(document.getElementById('revenue').value);
+      var imps = parseFloat(document.getElementById('impressions').value);
+      var curr = document.getElementById('currency').value;
+      var sym = currencies[curr].symbol;
+      var rate = currencies[curr].rate;
+      var box = document.getElementById('resultBox');
+      var val = document.getElementById('resultValue');
+      var brk = document.getElementById('resultBreakdown');
+
+      if (isNaN(revenue) || isNaN(imps) || revenue <= 0 || imps <= 0) {
+        alert('Please enter valid positive numbers for both fields.');
+        return;
+      }
+
+      var ecpmUSD = (revenue / imps) * 1000;
+      var ecpmLocal = ecpmUSD * rate;
+      val.textContent = sym + ecpmLocal.toFixed(2);
+      brk.innerHTML = '<strong>eCPM = (Revenue / Impressions) \u00d7 1,000</strong><br>' +
+        'Revenue: ' + sym + (revenue * rate).toFixed(2) + '<br>' +
+        'Impressions: ' + imps.toLocaleString() + '<br>' +
+        'eCPM: ' + sym + ecpmLocal.toFixed(2) + (curr !== 'USD' ? ' (\u2248 $' + ecpmUSD.toFixed(2) + ' USD)' : '');
+      box.classList.add('show');
+    }
+  </script>
+<script>
+document.querySelectorAll('.has-dropdown > a').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    if (window.innerWidth <= 768) {
+      if (!this.parentElement.classList.contains('open')) {
+        e.preventDefault();
+        this.parentElement.classList.add('open');
+      }
+    }
+  });
+});
+</script>
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:20px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;">
+    <p style="margin:0;flex:1;font-size:0.9rem;line-height:1.5;">
+      We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.
+      <a href="/privacy" style="color:#4a9eff;text-decoration:underline;">Learn more</a>
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#4a9eff;color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.9rem;">Accept</button>
+      <button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.9rem;">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+function acceptCookies(){localStorage.setItem('cookie_consent','accepted');document.getElementById('cookie-banner').style.display='none';}
+function declineCookies(){localStorage.setItem('cookie_consent','declined');document.getElementById('cookie-banner').style.display='none';}
+if(!localStorage.getItem('cookie_consent')){document.getElementById('cookie-banner').style.display='block';}
+</script>
+</body>
+</html>

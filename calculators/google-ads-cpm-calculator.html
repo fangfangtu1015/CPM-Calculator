@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Crect x='18' y='55' width='16' height='30' rx='3' fill='%232563eb'/%3E%3Crect x='42' y='35' width='16' height='50' rx='3' fill='%232563eb'/%3E%3Crect x='66' y='15' width='16' height='70' rx='3' fill='%232563eb'/%3E%3C/svg%3E">
+  <title>Google Ads CPM Calculator - Display & Video CPM</title>
+  <meta name="description" content="Free Google Ads CPM Calculator. Calculate your Google Display and Video ad cost per mille and compare to industry benchmarks.">
+  <link rel="canonical" href="https://cpmcalc.org/calculators/google-ads-cpm-calculator/">
+  <meta property="og:title" content="Google Ads CPM Calculator - Calculate Google Display & Video CPM">
+  <meta property="og:description" content="Calculate your Google Ads CPM based on ad spend and impressions. Compare to Display Network and YouTube benchmarks.">
+  <meta property="og:type" content="website">
+<meta property="og:site_name" content="CPM Calculator">
+  <meta property="og:url" content="https://cpmcalc.org/calculators/google-ads-cpm-calculator/">
+  <meta property="og:image" content="https://cpmcalc.org/images/ad-metrics-comparison.webp">
+<meta property="og:image:alt" content="CPM Calculator - Free Online Advertising Cost Calculator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google Ads CPM Calculator - Calculate Google Display & Video CPM">
+  <meta name="twitter:description" content="Calculate your Google Ads CPM based on ad spend and impressions. Compare to Display Network and YouTube benchmarks.">
+  <meta name="twitter:image" content="https://cpmcalc.org/images/ad-metrics-comparison.webp">
+  <link rel="stylesheet" href="/css/style.css">
+<style>.form-group select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:0.95rem;background:#fff;}.currency-label{font-weight:normal;font-size:0.85em;color:var(--text-light);}</style>
+<script src="/js/currency.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Google Ads CPM Calculator",
+    "url": "https://cpmcalc.org/calculators/google-ads-cpm-calculator/",
+    "description": "Calculate your Google Ads cost per mille (CPM) for Display and Video campaigns.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All"
+  }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cpmcalc.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Google Ads CPM Calculator - Display & Video CPM",
+      "item": "https://cpmcalc.org/calculators/google-ads-cpm-calculator/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../" class="logo"><span class="logo-icon">&#x1F4CA;</span> CPM Calculator</a>
+      <button class="mobile-toggle" onclick="document.querySelector('nav').classList.toggle('open')">&#9776;</button>
+      <nav>
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li class="has-dropdown">
+            <a href="../calculators/youtube-cpm-calculator" class="active">Calculators</a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-label">Platform CPM</li>
+              <li><a href="../calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></li>
+              <li><a href="../calculators/tiktok-cpm-calculator">TikTok CPM Calculator</a></li>
+              <li><a href="../calculators/instagram-cpm-calculator">Instagram CPM Calculator</a></li>
+              <li><a href="../calculators/facebook-ads-cpm-calculator">Facebook Ads CPM</a></li>
+              <li><a href="../calculators/google-ads-cpm-calculator">Google Ads CPM</a></li>
+              <li><a href="../calculators/display-ads-cpm-calculator">Display Ads CPM</a></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-label">Revenue &amp; Rates</li>
+              <li><a href="../calculators/ecpm-calculator">eCPM Calculator</a></li>
+              <li><a href="../calculators/adsense-revenue-calculator">AdSense Revenue</a></li>
+              <li><a href="../calculators/sponsored-post-calculator">Sponsored Post Rate</a></li>
+              <li><a href="../calculators/influencer-rate-calculator">Influencer Rate</a></li>
+              <li><a href="../calculators/youtube-rpm-calculator">YouTube RPM Calculator</a></li>
+              <li><a href="../calculators/tiktok-rpm-calculator">TikTok RPM Calculator</a></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-label">Converters</li>
+              <li><a href="../calculators/cpm-to-cpc-converter">CPM to CPC</a></li>
+              <li><a href="../calculators/cpm-to-rpm-converter">CPM to RPM</a></li>
+              <li><a href="../calculators/batch-cpm-calculator">Batch CPM Calculator</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="../benchmarks/average-cpm-by-country">Benchmarks</a>
+            <ul class="dropdown-menu">
+              <li><a href="../benchmarks/average-cpm-by-country">CPM by Country</a></li>
+              <li><a href="../benchmarks/youtube-cpm-by-niche">YouTube CPM by Niche</a></li>
+              <li><a href="../benchmarks/average-rpm-by-platform">RPM by Platform</a></li>
+            </ul>
+          </li>
+          <li><a href="../blog/">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="breadcrumb"><a href="../">Home</a> &rsaquo; <a href="../calculators/youtube-cpm-calculator">Calculators</a> &rsaquo; Google Ads CPM Calculator</div>
+    <h1>Google Ads CPM Calculator</h1>
+    <p>Calculate your Google Ads cost per mille for Display and Video campaigns and compare your results against industry benchmarks.</p>
+  </section>
+
+  <div class="container">
+    <div class="calc-card">
+      <h2>Calculate Your Google Ads CPM</h2>
+      <div class="form-group">
+        <label for="currency">Currency</label>
+        <select id="currency">
+          <option value="USD" selected>USD - US Dollar ($)</option>
+          <option value="EUR">EUR - Euro (€)</option>
+          <option value="GBP">GBP - British Pound (£)</option>
+          <option value="CNY">CNY - Chinese Yuan (¥)</option>
+          <option value="JPY">JPY - Japanese Yen (¥)</option>
+          <option value="INR">INR - Indian Rupee (₹)</option>
+          <option value="CAD">CAD - Canadian Dollar (C$)</option>
+          <option value="AUD">AUD - Australian Dollar (A$)</option>
+          <option value="BRL">BRL - Brazilian Real (R$)</option>
+          <option value="KRW">KRW - Korean Won (₩)</option>
+          <option value="MXN">MXN - Mexican Peso (MX$)</option>
+          <option value="SGD">SGD - Singapore Dollar (S$)</option>
+          <option value="CHF">CHF - Swiss Franc</option>
+          <option value="HKD">HKD - Hong Kong Dollar (HK$)</option>
+          <option value="ZAR">ZAR - South African Rand (R)</option>
+        </select>
+      <p style="font-size:0.8rem;color:var(--text-light);margin:4px 0 0;">Exchange rates fixed as of October 2026. For live rates, verify with your payment provider.</p>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="adSpend">Total Ad Spend <span class="currency-label">($)</span></label>
+          <input type="number" id="adSpend" placeholder="e.g. 500" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="impressions">Total Impressions</label>
+          <input type="number" id="impressions" placeholder="e.g. 100000" min="0" step="1">
+        </div>
+      </div>
+      <button class="btn btn-block" onclick="calculateCPM()">Calculate</button>
+      <div class="result-box" id="resultBox">
+        <div class="result-value" id="resultValue">$0.00</div>
+        <div class="result-label">Your Google Ads CPM</div>
+        <div class="result-breakdown" id="resultBreakdown"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <div class="container" style="max-width:780px;">
+      <h2>What Is Google Ads CPM?</h2>
+      <p>Google Ads CPM (Cost Per Mille) measures the cost an advertiser pays for every 1,000 impressions across Google's advertising ecosystem, which includes the Google Display Network (GDN), YouTube, Gmail, Discover, and Google's network of partner websites. Google Ads is the world's largest digital advertising platform, and understanding your CPM is essential for budget management and campaign optimization.</p>
+      <div class="formula-box">CPM = (Total Ad Spend / Total Impressions) &times; 1,000</div>
+      <p>For example, if you spend $560 on Google Display ads and receive 200,000 impressions, your CPM would be ($560 / 200,000) &times; 1,000 = $2.80, which aligns with the Google Display Network average.</p>
+
+      <h2>Google Ads CPM Benchmarks by Channel (2026)</h2>
+      <p>Google's advertising ecosystem spans multiple channels, each with different CPM ranges. Understanding these differences helps you allocate budget effectively across campaigns.</p>
+      <table class="data-table">
+        <thead>
+          <tr><th>Google Ads Channel</th><th>Average CPM</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google Display Network</td><td>$2.80</td></tr>
+          <tr><td>YouTube Video Ads</td><td>$5 - $10</td></tr>
+          <tr><td>Gmail Ads</td><td>$3 - $8</td></tr>
+          <tr><td>Google Discover</td><td>$4 - $12</td></tr>
+          <tr><td>Search Partners</td><td>$5 - $15</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-top:8px;"><strong>Sources:</strong> Google Ads benchmarks from <a href="https://www.wordstream.com/blog/ws/google-ads-benchmarks" target="_blank" rel="nofollow noopener noreferrer">WordStream Google Ads Benchmarks 2025-2026</a> and <a href="https://www.digitalapplied.com/blog/youtube-statistics-2026-platform-data-points" target="_blank" rel="nofollow noopener noreferrer">Digital Applied Google Ads Revenue data</a>. Figures represent aggregated averages across all industries and may not reflect specific campaign performance.</p>
+
+      <h2>Google Ads CPC Benchmarks by Industry (2026)</h2>
+      <p>While CPM is the focus of this calculator, many Google Ads campaigns use CPC (Cost Per Click) billing. Understanding industry CPC benchmarks helps you evaluate whether your campaigns are competitive:</p>
+      <table class="data-table">
+        <thead>
+          <tr><th>Industry</th><th>Average CPC</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Legal Services</td><td>$23.19</td></tr>
+          <tr><td>B2B SaaS</td><td>$11.07</td></tr>
+          <tr><td>Finance &amp; Insurance</td><td>$8.25</td></tr>
+          <tr><td>Healthcare</td><td>$5.60</td></tr>
+          <tr><td>Real Estate</td><td>$3.50</td></tr>
+          <tr><td>E-commerce</td><td>$1.16</td></tr>
+          <tr><td>Education</td><td>$4.20</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-top:8px;"><strong>Sources:</strong> Google Ads benchmarks from <a href="https://www.wordstream.com/blog/ws/google-ads-benchmarks" target="_blank" rel="nofollow noopener noreferrer">WordStream Google Ads Benchmarks 2025-2026</a> and <a href="https://www.digitalapplied.com/blog/youtube-statistics-2026-platform-data-points" target="_blank" rel="nofollow noopener noreferrer">Digital Applied Google Ads Revenue data</a>. Figures represent aggregated averages across all industries and may not reflect specific campaign performance.</p>
+
+      <div class="key-point">
+        <strong>Key Insight:</strong> The Google Display Network offers one of the lowest CPMs of any major advertising channel at just $2.80. However, display ads typically have lower click-through rates (0.05-0.10%) compared to search ads (3-5%), so the lower CPM does not always translate to better overall campaign performance.
+      </div>
+
+      <h2>Search vs. Display: Understanding the Difference</h2>
+      <p>Google Ads spans two fundamentally different advertising models. Search ads appear when users actively search for products or services, while display ads are shown on websites across the Google Display Network based on audience targeting. Search ads typically have much higher CPCs but also higher conversion rates. Display ads have lower CPMs and are better suited for brand awareness campaigns.</p>
+      <p>For CPM-based campaigns (brand awareness, reach), the Google Display Network is the most cost-effective option. For CPC-based campaigns (direct response, conversions), search ads typically deliver better ROI despite higher per-click costs.</p>
+
+      <h2>Quality Score and Its Impact on CPM</h2>
+      <p>Google's Quality Score affects not only CPC but also the effective CPM you pay in ad auctions. Quality Score is based on three factors: expected click-through rate, ad relevance, and landing page experience. Ads with higher Quality Scores receive preferential treatment in auctions, effectively lowering the CPM you pay. Improving your Quality Score from 5 to 8 can reduce your effective CPM by 20-30%.</p>
+
+      <h2>Tips for Optimizing Google Ads CPM</h2>
+      <ul>
+        <li><strong>Improve Quality Score:</strong> Focus on ad relevance, landing page experience, and expected CTR to reduce effective CPM.</li>
+        <li><strong>Use responsive display ads:</strong> Responsive ads automatically optimize size, format, and placement, often achieving lower CPMs than fixed-size ads.</li>
+        <li><strong>Leverage audience segmentation:</strong> Target in-market and affinity audiences for better relevance and lower CPMs.</li>
+        <li><strong>Optimize for viewability:</strong> Google charges for viewable impressions on display. Improving viewability rates ensures you are not paying for unseen ads.</li>
+        <li><strong>Test YouTube vs. Display:</strong> YouTube CPMs are higher but engagement is significantly better. Test both to find the optimal mix.</li>
+        <li><strong>Use Smart Bidding:</strong> Google's AI-powered bidding strategies can optimize CPM in real-time based on conversion probability.</li>
+      </ul>
+
+      <div class="related-links">
+        <h3>Related Tools &amp; Resources</h3>
+        <ul>
+          <li><a href="../calculators/facebook-ads-cpm-calculator">Facebook Ads CPM Calculator</a></li>
+          <li><a href="../calculators/display-ads-cpm-calculator">Display Ads CPM Calculator</a></li>
+          <li><a href="../blog/google-ads-cpc-benchmarks">Google Ads CPC Benchmarks by Industry</a></li>
+          <li><a href="../blog/cpm-vs-cpc-key-differences">CPM vs CPC: Key Differences Explained</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  
+    <p style="font-size:0.85rem;color:var(--text-light);margin-top:24px;padding:16px;background:#f8f9fa;border-radius:var(--radius);border-left:3px solid var(--primary);">
+    <strong>Disclaimer:</strong> This calculator provides estimates for reference purposes only and does not constitute financial or business advice. Actual costs and results may vary based on market conditions, targeting, competition, and other factors. Exchange rates are approximate and not real-time financial data. Industry benchmarks are derived from publicly available third-party reports and should be interpreted with caution. Always consult with qualified advertising professionals before making budget decisions.
+    </p>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>CPM Calculator</h4>
+        <p style="font-size:0.88rem;margin-bottom:10px;">Free online tools for calculating and optimizing advertising costs.</p>
+      <p style="font-size:0.88rem;margin-bottom:10px;"><a href="mailto:contact@cpmcalc.org" style="color:var(--primary);">contact@cpmcalc.org</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul>
+          <li><a href="../calculators/youtube-cpm-calculator">YouTube CPM Calculator</a></li>
+          <li><a href="../calculators/tiktok-cpm-calculator">TikTok CPM Calculator</a></li>
+          <li><a href="../calculators/ecpm-calculator">eCPM Calculator</a></li>
+          <li><a href="../calculators/cpm-to-cpc-converter">CPM to CPC Converter</a></li>
+          <li><a href="../calculators/adsense-revenue-calculator">AdSense Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Benchmarks</h4>
+        <ul>
+          <li><a href="../benchmarks/average-cpm-by-country">CPM by Country</a></li>
+          <li><a href="../benchmarks/youtube-cpm-by-niche">YouTube CPM by Niche</a></li>
+          <li><a href="../benchmarks/average-rpm-by-platform">RPM by Platform</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog/cpm-formula-how-it-works">CPM Formula Guide</a></li>
+          <li><a href="../blog/cpm-vs-cpc-key-differences">CPM vs CPC</a></li>
+          <li><a href="../blog/what-is-ecpm-vs-rpm">eCPM vs RPM</a></li>
+          <li><a href="../blog/how-to-calculate-cpm-for-ad-campaigns">How to Calculate CPM</a></li>
+          <li><a href="../about">About Us</a></li>
+          <li><a href="../contact">Contact</a></li>
+          <li><a href="../privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CPM Calculator. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="../about">About</a>
+        <a href="../contact">Contact</a>
+        <a href="../privacy">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+        function calculateCPM() {
+      var spend = parseFloat(document.getElementById('adSpend').value);
+      var imps = parseFloat(document.getElementById('impressions').value);
+      var curr = document.getElementById('currency').value;
+      var sym = currencies[curr].symbol;
+      var rate = currencies[curr].rate;
+      var box = document.getElementById('resultBox');
+      var val = document.getElementById('resultValue');
+      var brk = document.getElementById('resultBreakdown');
+
+      if (isNaN(spend) || isNaN(imps) || spend <= 0 || imps <= 0) {
+        alert('Please enter valid positive numbers for both fields.');
+        return;
+      }
+
+      var cpmUSD = (spend / imps) * 1000;
+      var cpmLocal = cpmUSD * rate;
+      val.textContent = sym + cpmLocal.toFixed(2);
+      brk.innerHTML = '<strong>CPM = (Ad Spend / Impressions) \u00d7 1,000</strong><br>' +
+        'Ad Spend: ' + sym + (spend * rate).toFixed(2) + '<br>' +
+        'Impressions: ' + imps.toLocaleString() + '<br>' +
+        'CPM: ' + sym + cpmLocal.toFixed(2) + (curr !== 'USD' ? ' (\u2248 $' + cpmUSD.toFixed(2) + ' USD)' : '');
+      box.classList.add('show');
+    }
+  </script>
+<script>
+document.querySelectorAll('.has-dropdown > a').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    if (window.innerWidth <= 768) {
+      if (!this.parentElement.classList.contains('open')) {
+        e.preventDefault();
+        this.parentElement.classList.add('open');
+      }
+    }
+  });
+});
+</script>
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:20px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;">
+    <p style="margin:0;flex:1;font-size:0.9rem;line-height:1.5;">
+      We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.
+      <a href="/privacy" style="color:#4a9eff;text-decoration:underline;">Learn more</a>
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#4a9eff;color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.9rem;">Accept</button>
+      <button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.9rem;">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+function acceptCookies(){localStorage.setItem('cookie_consent','accepted');document.getElementById('cookie-banner').style.display='none';}
+function declineCookies(){localStorage.setItem('cookie_consent','declined');document.getElementById('cookie-banner').style.display='none';}
+if(!localStorage.getItem('cookie_consent')){document.getElementById('cookie-banner').style.display='block';}
+</script>
+</body>
+</html>
