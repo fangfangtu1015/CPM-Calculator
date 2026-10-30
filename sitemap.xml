@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://cpmcalc.org/</loc><lastmod>2026-10-26</lastmod><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://cpmcalc.org/</loc><lastmod>2026-10-30</lastmod><priority>1.0</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://cpmcalc.org/about/</loc><lastmod>2026-10-26</lastmod><priority>0.6</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://cpmcalc.org/contact/</loc><lastmod>2026-10-26</lastmod><priority>0.5</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://cpmcalc.org/privacy/</loc><lastmod>2026-10-26</lastmod><priority>0.4</priority><changefreq>yearly</changefreq></url>
@@ -25,7 +25,8 @@
   <url><loc>https://cpmcalc.org/benchmarks/average-rpm-by-platform/</loc><lastmod>2026-10-26</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://cpmcalc.org/benchmarks/youtube-cpm-by-niche/</loc><lastmod>2026-10-26</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
 
-  <url><loc>https://cpmcalc.org/blog/</loc><lastmod>2026-10-26</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://cpmcalc.org/blog/</loc><lastmod>2026-10-30</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://cpmcalc.org/blog/why-cpm-spikes-q4-ad-cost-seasonality/</loc><lastmod>2026-10-30</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://cpmcalc.org/blog/average-youtube-cpm-2026/</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://cpmcalc.org/blog/cpm-advertising-explained-beginners/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://cpmcalc.org/blog/cpm-formula-how-it-works/</loc><lastmod>2026-10-26</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
