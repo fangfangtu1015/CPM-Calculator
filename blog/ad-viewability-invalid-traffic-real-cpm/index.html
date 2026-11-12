@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Crect x='18' y='55' width='16' height='30' rx='3' fill='%232563eb'/%3E%3Crect x='42' y='35' width='16' height='50' rx='3' fill='%232563eb'/%3E%3Crect x='66' y='15' width='16' height='70' rx='3' fill='%232563eb'/%3E%3C/svg%3E">
+  <title>Ad Viewability &amp; Invalid Traffic: The True Cost of Your CPM</title>
+  <meta name="description" content="How the MRC viewability standard, invalid traffic, and made-for-advertising supply change the CPM you actually pay. 2026 benchmarks, formulas, and an audit workflow.">
+  <link rel="canonical" href="https://cpmcalc.org/blog/ad-viewability-invalid-traffic-real-cpm/">
+  <meta property="og:title" content="Ad Viewability &amp; Invalid Traffic: The True Cost of Your CPM">
+  <meta property="og:description" content="How the MRC viewability standard, invalid traffic, and made-for-advertising supply change the CPM you actually pay. 2026 benchmarks, formulas, and an audit workflow.">
+  <meta property="og:url" content="https://cpmcalc.org/blog/ad-viewability-invalid-traffic-real-cpm/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CPM Calculator">
+  <meta property="og:image" content="https://cpmcalc.org/images/blog-ad-viewability-real-cpm.webp">
+  <meta property="og:image:alt" content="Ad viewability and invalid traffic funnel: from booked impressions to one verified viewable impression">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ad Viewability &amp; Invalid Traffic: The True Cost of Your CPM">
+  <meta name="twitter:description" content="How the MRC viewability standard, invalid traffic, and made-for-advertising supply change the CPM you actually pay. 2026 benchmarks, formulas, and an audit workflow.">
+  <meta name="twitter:image" content="https://cpmcalc.org/images/blog-ad-viewability-real-cpm.webp">
+  <meta property="article:published_time" content="2026-11-11T00:00:00+08:00">
+  <meta property="article:modified_time" content="2026-11-11T00:00:00+08:00">
+  <meta property="article:author" content="https://cpmcalc.org/about/">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Ad Viewability & Invalid Traffic: The True Cost of Your CPM",
+    "description": "How the MRC viewability standard, invalid traffic, and made-for-advertising supply change the CPM you actually pay. 2026 benchmarks, formulas, and an audit workflow.",
+    "url": "https://cpmcalc.org/blog/ad-viewability-invalid-traffic-real-cpm/",
+    "datePublished": "2026-11-11",
+    "dateModified": "2026-11-11",
+    "image": "https://cpmcalc.org/images/blog-ad-viewability-real-cpm.webp",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CPM Calculator",
+      "url": "https://cpmcalc.org"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "CPM Calculator"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://cpmcalc.org/blog/ad-viewability-invalid-traffic-real-cpm/"
+    }
+  }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cpmcalc.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://cpmcalc.org/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Ad Viewability & Invalid Traffic",
+      "item": "https://cpmcalc.org/blog/ad-viewability-invalid-traffic-real-cpm/"
+    }
+  ]
+}
+</script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N3SVWWKV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a good viewability rate in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Against measured market data, roughly 68% for display and roughly 80% for video are the 2026 open-web averages, so \"good\" means materially above those for the same format, device and market. Anything quoted as a universal target — \"70% is great, 40% works too\" — is unsourced. Compare placements on cost per viewable impression instead of comparing rates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you calculate cost per viewable impression?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide spend by viewable impressions and multiply by 1,000. The critical detail is that viewable impressions are counted over measurable impressions, so if you want a number comparable to your reported CPM, you must also decide what happens to the unmeasurable remainder — exclude it (conservative) or extrapolate the measured rate onto it (what some contracts do)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between GIVT and SIVT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GIVT is invalid traffic that is easy to identify by general criteria — data-centre IPs, known bots and crawlers, non-browser user agents — and platforms filter it automatically at no cost to you. SIVT is deliberately disguised invalid traffic — spoofed apps and domains, hidden or stacked iframes, bot farms on real devices — which requires separate detection, contractual terms, and post-hoc recovery."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Google refund invalid traffic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For Display & Video 360, Google documents that its exchange partners agreed to refund IVT, and the refund appears as an adjustment line item on settlement reports rather than in the campaign dashboard. On AdSense, the flow runs the other way: Google can withhold publisher earnings for invalid activity, up to the total earnings of the prior 60 days. Automatic GIVT filtration happens without a claim in either case."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my viewability rate high but my results bad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three common causes: the rate is measured over a small measurable subset while most spend sits in the unmeasurable tail; the inventory is made-for-advertising supply, which is engineered to score well on viewability; or the impressions cleared the one-second pixel threshold with almost no time in view. Check measurable rate, MFA exposure and average time in view before touching creative."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is viewability a vanity metric?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a necessary but insufficient one. It was designed as a floor against invisible ad slots, and it works for that. It fails as a proxy for attention — the one-second threshold has been shown to err in the seller's favour — and it fails entirely against supply that optimises for it. Use it as a filter, not as a goal."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../" class="logo"><span class="logo-icon">&#x1F4CA;</span> CPM Calculator</a>
+      <button class="mobile-toggle" onclick="document.querySelector('nav').classList.toggle('open')">&#9776;</button>
+      <nav>
+        <ul>
+          <li><a href="../../">Home</a></li>
+          <li class="has-dropdown">
+            <a href="../../calculators/youtube-cpm-calculator/">Calculators</a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-label">Platform CPM</li>
+              <li><a href="../../calculators/youtube-cpm-calculator/">YouTube CPM Calculator</a></li>
+              <li><a href="../../calculators/tiktok-cpm-calculator/">TikTok CPM Calculator</a></li>
+              <li><a href="../../calculators/instagram-cpm-calculator/">Instagram CPM Calculator</a></li>
+              <li><a href="../../calculators/facebook-ads-cpm-calculator/">Facebook Ads CPM</a></li>
+              <li><a href="../../calculators/google-ads-cpm-calculator/">Google Ads CPM</a></li>
+              <li><a href="../../calculators/display-ads-cpm-calculator/">Display Ads CPM</a></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-label">Revenue &amp; Rates</li>
+              <li><a href="../../calculators/ecpm-calculator/">eCPM Calculator</a></li>
+              <li><a href="../../calculators/adsense-revenue-calculator/">AdSense Revenue</a></li>
+              <li><a href="../../calculators/sponsored-post-calculator/">Sponsored Post Rate</a></li>
+              <li><a href="../../calculators/influencer-rate-calculator/">Influencer Rate</a></li>
+              <li><a href="../../calculators/youtube-rpm-calculator/">YouTube RPM Calculator</a></li>
+              <li><a href="../../calculators/tiktok-rpm-calculator/">TikTok RPM Calculator</a></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-label">Converters</li>
+              <li><a href="../../calculators/cpm-to-cpc-converter/">CPM to CPC</a></li>
+              <li><a href="../../calculators/cpm-to-rpm-converter/">CPM to RPM</a></li>
+              <li><a href="../../calculators/batch-cpm-calculator/">Batch CPM Calculator</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="../../benchmarks/average-cpm-by-country/">Benchmarks</a>
+            <ul class="dropdown-menu">
+              <li><a href="../../benchmarks/average-cpm-by-country/">CPM by Country</a></li>
+              <li><a href="../../benchmarks/youtube-cpm-by-niche/">YouTube CPM by Niche</a></li>
+              <li><a href="../../benchmarks/average-rpm-by-platform/">RPM by Platform</a></li>
+            </ul>
+          </li>
+          <li><a href="../" class="active">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <section class="page-hero">
+    <div class="breadcrumb"><a href="../../">Home</a> &rsaquo; <a href="../../blog/">Blog</a> &rsaquo; Ad Viewability &amp; Invalid Traffic</div>
+    <h1>Ad Viewability &amp; Invalid Traffic: The True Cost of Your CPM</h1>
+    <p>Your dashboard reports a CPM. It does not report what you paid for a real impression that a human being actually saw. Here is the measurement standard, the arithmetic, and the 2026 data that closes the gap.</p>
+  </section>
+
+  <div class="container" style="max-width:780px;padding-top:20px;">
+  <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:16px;">Published: Nov 11, 2026 &middot; By the CPM Calculator research team &middot; Measurement methodology and full source list at the bottom of the page</p>
+</div>
+
+<div style="max-width:780px;margin:0 auto 24px;border-radius:var(--radius);overflow:hidden;">
+  <img src="/images/blog-ad-viewability-real-cpm.webp" alt="Flat vector diagram of ad impressions passing through a viewability and invalid traffic filter, ending in one verified viewable impression" width="1792" height="1024" style="width:100%;height:auto;display:block;">
+</div>
+
+  <main class="article-content">
+    <div class="toc">
+      <h4>Table of Contents</h4>
+      <ol>
+        <li><a href="#dashboard">Why the CPM in Your Dashboard Is Not a Price</a></li>
+        <li><a href="#standard">What "Viewable" Means &mdash; and Why Three Standards Give Three Bills</a></li>
+        <li><a href="#denominator">The Denominator Trap: Served, Measurable, Viewable</a></li>
+        <li><a href="#benchmarks">2026 Viewability Benchmarks by Format, Device and Market</a></li>
+        <li><a href="#givt-sivt">Invalid Traffic: GIVT vs SIVT, and Who Filters What</a></li>
+        <li><a href="#ivt-cost">What Invalid Traffic Actually Costs</a></li>
+        <li><a href="#mfa">Made-for-Advertising Supply: Why Viewability Alone Fails</a></li>
+        <li><a href="#waste-ladder">The Waste Ladder: From Booked CPM to Qualified CPM</a></li>
+        <li><a href="#calculator">True CPM Calculator</a></li>
+        <li><a href="#cheap-cpm">Why Cheap CPMs Are the Fraud Magnet</a></li>
+        <li><a href="#contracts">Refunds, Make-Goods and the 10% Discrepancy Rule</a></li>
+        <li><a href="#attestation">ads.txt and sellers.json: What Attestation Cannot Do</a></li>
+        <li><a href="#audit">How to Audit Your Own Campaign in Six Steps</a></li>
+        <li><a href="#publishers">The Publisher Mirror: Same Math, Inverted</a></li>
+        <li><a href="#attention">Viewability Is Not Attention</a></li>
+        <li><a href="#verdict">Our Take</a></li>
+        <li><a href="#faq">Frequently Asked Questions</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ol>
+    </div>
+
+    <p>An advertiser pays a <a href="../../blog/what-is-cost-per-thousand-impressions/">CPM</a>. A publisher earns an <a href="../../blog/what-is-ecpm-vs-rpm/">eCPM</a>. Both numbers are printed by the party that benefits from them, and both are computed over impressions <em>served</em> &mdash; not impressions seen by a human being in front of a screen.</p>
+
+    <p>The difference between those two denominators is the largest unmanaged cost line in digital advertising. It is not a rounding error. On a typical open-web display campaign in 2026, the gap between the reported CPM and the cost of one impression that was measurable, in view, human, and on a site a brand would actually choose runs <strong>60% to 100%</strong>. This page shows how that gap is constructed, what the current measured benchmarks are, and how to audit it on your own account.</p>
+
+    <h2 id="dashboard">Why the CPM in Your Dashboard Is Not a Price</h2>
+
+    <p>When a platform reports "CPM $5.00, 2,000,000 impressions," it is telling you the cost of an <em>ad server event</em>: a tag fired, a creative was delivered, and an impression counted. It is not telling you four things that determine whether the money worked:</p>
+
+    <ol>
+      <li><strong>Whether the impression could be measured at all.</strong> Measurement scripts do not run on every served impression. The unmeasured tail is invisible in the reporting but fully priced.</li>
+      <li><strong>Whether the ad was on screen.</strong> The industry standard requires at least half the creative's pixels to be within the viewport for at least one continuous second. A large share of delivered impressions never meet it.</li>
+      <li><strong>Whether a human was present.</strong> Data-center traffic, crawlers, hidden iframes, and hijacked devices all generate valid-looking impression events.</li>
+      <li><strong>Whether the site was one you would choose.</strong> Low-quality "made for advertising" inventory frequently scores <em>well</em> on viewability, which is precisely why viewability alone is not a sufficient filter.</li>
+    </ol>
+
+    <div class="key-point">
+      <strong>The one-sentence version:</strong> Reported CPM prices an impression event. Qualified CPM prices an outcome. Every layer between them is a discount you did not negotiate, and the industry's own 2026 measurement data says those layers are worth roughly half your media budget.
+    </div>
+
+    <p>Everything below is the evidence for that sentence, in the order the deductions occur: the visibility standard, the measurement denominator, the traffic filter, and the supply-quality filter.</p>
+
+    <h2 id="standard">What "Viewable" Means &mdash; and Why Three Standards Give Three Bills</h2>
+
+    <p>Ad viewability is a digital advertising metric that reports the proportion of ad impressions that were actually capable of being seen by a human, measured against a defined pixel-and-time threshold. The definition is not set by the vendor selling the ads.</p>
+
+    <p>The governing standard comes from the <strong>Media Rating Council (MRC)</strong>, the nonprofit that accredits media measurement in the United States, and it has three parts rather than one:</p>
+
+    <table class="data-table">
+      <caption>MRC viewability thresholds by creative type, as implemented in platform and third-party measurement</caption>
+      <thead>
+        <tr><th>Creative</th><th>Threshold</th><th>Time in view</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Display / banner</td><td>&ge; 50% of pixels</td><td>&ge; 1 continuous second</td><td>The baseline most "viewability rate" figures use</td></tr>
+        <tr><td>In-stream video</td><td>&ge; 50% of pixels</td><td>&ge; 2 consecutive seconds</td><td>Updated from 1s to 2s for video</td></tr>
+        <tr><td>Large format (&ge; 242,500 px)</td><td>&ge; 30% of pixels</td><td>&ge; 1 continuous second</td><td>Accommodates very large units where 50% is unrealistic</td></tr>
+      </tbody>
+    </table>
+    <p class="source-note">Sources: MRC Viewable Impression Guidelines; the same three thresholds are implemented in Google's Active View reporting (<a href="https://support.google.com/google-ads/answer/7029393" target="_blank" rel="nofollow noopener noreferrer">Understand viewability and Active View reporting metrics</a>) and in Amazon Ads' <a href="https://advertising.amazon.com/library/guides/viewability" target="_blank" rel="nofollow noopener noreferrer">Viewability guide</a>. An impression that is clicked counts as viewable regardless of pixel time.</p>
+
+    <h3>Three standards, three different invoices</h3>
+
+    <p>Here is the part almost no explainer mentions: <strong>the MRC threshold is a floor, not the only rule in use.</strong> Different buyers apply different definitions to the same campaign, and each produces a different viewability rate and therefore a different effective price per thousand:</p>
+
+    <ul>
+      <li><strong>MRC "standard"</strong> &mdash; 50% of pixels for 1 second. This is what most platform dashboards report.</li>
+      <li><strong>GroupM "strict"</strong> &mdash; 100% of pixels in view, audio on for video, and at least 50% of the creative's duration watched. Some large media agencies contract on this definition, and it can cut a reported viewability rate in half.</li>
+      <li><strong>Vendor method differences</strong> &mdash; measurement polling intervals (100ms vs 200ms sampling), DOM-based geometry versus iframe-container inference, and whether the tag measures the creative or the container around it. Two accredited vendors on the same placement can disagree by several points.</li>
+    </ul>
+
+    <p>Adobe's DSP documentation makes the split explicit by labelling its two modes "Standard" (MRC) and "Strict" (GroupM) side by side, and Microsoft's Xandr documentation devotes a page to why its own measured impression count exceeds what third parties report on the same inventory.</p>
+
+    <p class="source-note">Sources: <a href="https://experienceleague.adobe.com/docs/dsp/user-guide/campaign-setup/targeting/placement-level-targeting.html" target="_blank" rel="nofollow noopener noreferrer">Adobe DSP placement-level pre-bid filters</a> (Standard vs Strict definitions); <a href="https://learn.microsoft.com/en-us/xandr/reporting/ad-viewability" target="_blank" rel="nofollow noopener noreferrer">Microsoft Xandr ad viewability methodology</a>; <a href="https://support.google.com/admanager/answer/17262722" target="_blank" rel="nofollow noopener noreferrer">Google Ad Manager Active View methodology</a>.</p>
+
+    <div class="key-point">
+      <strong>Practical consequence:</strong> before you compare a viewability rate from a dashboard, a verification vendor, and an agency report, ask which threshold each used. If they differ, the three numbers are not three estimates of one quantity &mdash; they are three different quantities, and the vCPM price attached to each is different too.
+    </div>
+
+    <h2 id="denominator">The Denominator Trap: Served, Measurable, Viewable</h2>
+
+    <p>Viewability rate is <strong>not</strong> calculated over the impressions you paid for. It is calculated over the impressions that could be measured:</p>
+
+    <div class="formula-box">
+      Viewable rate = Viewable impressions / Measurable impressions
+    </div>
+
+    <p>Measurable impressions are the subset where the measurement tag actually ran and could observe the viewport. That excludes creatives served to environments where tags fail, requests that time out, slots rendered after the user left, and inventory where the buyer's measurement was not eligible to run. Google reports this as the <em>measurable rate</em>, and its own documentation explains that viewable impressions and measurable impressions are separate reportable quantities.</p>
+
+    <p>Now look at what the industry's own transparency benchmark found in the unmeasured tail:</p>
+
+    <table class="data-table">
+      <caption>ANA Programmatic Transparency Benchmark, Q3 2025 line-item decomposition (web + mobile, excluding CTV), as a share of spend</caption>
+      <thead>
+        <tr><th>Line item</th><th>Share of spend</th><th>What you paid for</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Non-measurable impressions</td><td><strong>15%</strong></td><td>Delivery you cannot verify was ever observable</td></tr>
+        <tr><td>Non-viewable impressions</td><td><strong>10%</strong></td><td>Measured, but failed the 50%/1s threshold</td></tr>
+        <tr><td>Made-for-advertising sites</td><td>0.5%</td><td>Seen, but on industrial content farms</td></tr>
+        <tr><td>IVT / bots</td><td>0.3%</td><td>Not human</td></tr>
+        <tr><td>Middleman transaction fees</td><td>27%</td><td>SSP 13%, DSP transaction 6%, DSP data 4%, other DSP 4%</td></tr>
+        <tr><td><strong>TrueAdSpend (working media)</strong></td><td><strong>47.1%</strong></td><td>Media that plausibly reached an in-view human</td></tr>
+      </tbody>
+    </table>
+    <p class="source-note">Sources: ANA (Association of National Advertisers) Programmatic Transparency Benchmark, Q3 2025 findings, published November 2025, measured with TAG TrustNet and Fiducia across participating ANA marketer accounts. Figures are shares of programmatic media spend, not of impressions; CTV is excluded from this cut. The same programme reported a TrueAdSpend Index of <strong>43.3%</strong> in Q1 2026 and <strong>45.1%</strong> in Q2 2026.</p>
+
+    <div class="key-point">
+      <strong>The trap in one line:</strong> non-measurable spend (15%) is <em>larger</em> than non-viewable spend (10%). Fixing your viewability rate does not touch the biggest visibility hole in the chain &mdash; and because viewability is reported over measurable impressions, a measurability gap silently <em>flatters</em> your viewability score while you keep paying for the unmeasured tail.
+    </div>
+
+    <h3>Some contracts do not count viewable impressions &mdash; they estimate them</h3>
+
+    <p>The most under-discussed mechanic in this area is the <strong>gross-up</strong>. Where a portion of delivery cannot be measured, some contracts do not simply exclude it; they extrapolate the measured viewability rate onto the unmeasured remainder and bill against the extrapolation.</p>
+
+    <p>Amazon's own product terms illustrate the arithmetic with a worked example: of 1,000,000 delivered impressions, 900,000 are measurable and 800,000 of those are measured as viewable (88.9% of measurable). The contract then deems <strong>888,888</strong> impressions viewable &mdash; the 80% measured share applied across the full 1,111,111-impression base, so the unmeasured 100,000 impressions are credited as viewable at the measured rate.</p>
+
+    <p class="source-note">Sources: Amazon Ads product and traffic-validation terms, <a href="https://advertising.amazon.com/help/GBYPYH79NGJJ5JPS" target="_blank" rel="nofollow noopener noreferrer">Traffic validation</a> (which also discloses a 30-day post-impression detection window) and Amazon Ads performance metric definitions. The 888,888 figure is Amazon's own worked example, not our estimate.</p>
+
+    <p>This is not fraud; it is disclosed contract arithmetic. But it means the viewability number on your invoice may be a modelled quantity rather than a counted one, and any "true CPM" calculation you build should state which basis it uses. We recommend the conservative basis: divide by <em>counted</em> viewable impressions only.</p>
+
+    <h2 id="benchmarks">2026 Viewability Benchmarks by Format, Device and Market</h2>
+
+    <p>The single most-cited number in this category &mdash; "average viewability is 40&ndash;50%" &mdash; is an eleven-year-old industry estimate. The current measured figures are considerably higher, and that is part of the argument: viewability improved as a metric while wasted spend did not disappear. It moved into the unmeasured tail and into low-quality supply.</p>
+
+    <p>The most useful 2026 dataset is Integral Ad Science's 21st Media Quality Report, published July 2026 and reporting measured open-web activity from 2025 across more than 300 billion daily digital interactions:</p>
+
+    <table class="data-table">
+      <caption>Measured viewability and IVT, IAS 21st Media Quality Report (published July 2026; 2025 measurement period; open internet)</caption>
+      <thead>
+        <tr><th>Segment</th><th>Metric</th><th>Measured value</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Global display</td><td>Viewability rate</td><td><strong>67.9%</strong></td></tr>
+        <tr><td>Global video / OLV</td><td>Viewability rate</td><td><strong>79.7%</strong></td></tr>
+        <tr><td>Desktop display</td><td>Viewability rate</td><td>71.6%</td></tr>
+        <tr><td>Mobile web display</td><td>Viewability rate</td><td>64.5%</td></tr>
+        <tr><td>All display</td><td>IVT rate</td><td>1.1% (stable year on year)</td></tr>
+        <tr><td>North America</td><td>IVT rate</td><td>1.36%; US 1.40%</td></tr>
+        <tr><td>CTV</td><td>IVT rate</td><td>9.1%</td></tr>
+        <tr><td>Mobile web</td><td>MFA exposure rate</td><td>2.0% vs 0.5% desktop</td></tr>
+        <tr><td>Video, by market</td><td>Viewability range</td><td>Poland 84.4%, Australia 84.1% &hellip; Japan 63.2%</td></tr>
+        <tr><td>Ad clutter rate</td><td>2025 trend</td><td>worsened from 0.3% to 0.8% across the year</td></tr>
+      </tbody>
+    </table>
+    <p class="source-note">Sources: Integral Ad Science, 21st Edition Media Quality Report, published July 2026, measuring 2025 open-web activity across 300B+ daily digital interactions. Rates are impression-level percentages computed by IAS measurement tags; "IVT rate" is IAS's flagged share after its own filtering, and is not directly comparable to traffic-level fraud estimates from other vendors. Segment values are as reported in the edition; verify the current edition before quoting in a client deck.</p>
+
+    <p>Two things in that table matter more than the averages.</p>
+
+    <p><strong>First, the video-display gap is 11.8 points.</strong> Video is more viewable and more expensive. If your blended CPM is being compared across formats, you are comparing different products &mdash; the same caution we cover in <a href="../../blog/cpm-vs-cpv-when-to-use-each/">CPM vs CPV</a>.</p>
+
+    <p><strong>Second, mobile web is where the exposure concentrates.</strong> Mobile web accounts for roughly 45% of measured display impressions but carries about 72% of MFA exposure and about 72% of ad-clutter exposure in the IAS data. A campaign with a blended viewability rate that "looks fine" can be carrying almost all of its quality risk in one placement type.</p>
+
+    <div style="background:var(--bg-alt);border-radius:var(--radius);padding:20px;margin:24px 0;">
+      <p style="margin:0;font-size:0.95rem;"><strong>Related benchmark data on this site:</strong> <a href="../../benchmarks/average-cpm-by-country/">Average CPM by Country</a> (35 markets, three tiers) &middot; <a href="../../blog/what-is-a-good-cpm-by-industry-2026/">What Is a Good CPM? Industry Benchmarks 2026</a> &middot; <a href="../../blog/google-ads-cpc-benchmarks/">Google Ads CPC Benchmarks 2026</a></p>
+    </div>
+
+    <h2 id="givt-sivt">Invalid Traffic: GIVT vs SIVT, and Who Filters What</h2>
+
+    <p>Invalid traffic (IVT) is ad impressions or clicks generated by machines, processes, or humans with no genuine intent to engage with the advertisement, and which platforms and measurement standards therefore exclude from billable or reportable delivery. IVT splits into two categories with very different economics, and almost every "ad fraud" number you have read conflates them.</p>
+
+    <table class="data-table">
+      <caption>The two IVT classes, who is expected to filter them, and how the filtering shows up in your bill</caption>
+      <thead>
+        <tr><th>Class</th><th>Typical sources</th><th>Who filters it</th><th>Cost behaviour</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>GIVT</strong> (generally invalid)</td><td>Data-centre traffic, known bots and spiders, non-browser user agents, prefetch/prerender events, unidentified crawlers</td><td>Platforms filter it automatically; it is excluded from billing by default</td><td>Low visible cost. Cheap to detect, so it is a small share of measured spend</td></tr>
+        <tr><td><strong>SIVT</strong> (sophisticated invalid)</td><td>Device and app-ID spoofing, domain spoofing, hidden and stacked iframes, pixel flooding, click injection and hijacking, incentivised traffic, bot farms on real devices, falsified geolocation, cookie stuffing, hijacked devices</td><td>Requires separate detection, contractual terms, and often a third-party vendor</td><td>The expensive half. Detection lags delivery by weeks, so recovery is contractual, not automatic</td></tr>
+      </tbody>
+    </table>
+    <p class="source-note">Sources: MRC Invalid Traffic Filtering Guidelines (2021) for the GIVT/SIVT definitions; category lists as published in <a href="https://www.oracle.com/cx/advertising/measurement/ad-fraud-invalid-traffic/" target="_blank" rel="nofollow noopener noreferrer">Oracle Marketing Cloud measurement's IVT glossary</a> and Google's <a href="https://support.google.com/displayvideo/answer/7556661" target="_blank" rel="nofollow noopener noreferrer">invalid traffic refund documentation</a>. Google Ad Manager's metrics table notes that viewable totals are reported "net of compliant GIVT filtration, as well as some SIVT filtering techniques" &mdash; i.e. the filter applied is partial.</p>
+
+    <p>The asymmetry is the whole story. GIVT is cheap to catch, so everybody catches it, and the reported number is small. SIVT is expensive to catch, requires post-hoc analysis, and is usually only visible if you are paying a verification vendor and asking for the right report. Pixalate, which publishes one of the more granular IVT taxonomies, enumerated <strong>41 distinct IVT types</strong> when it launched its Clawback reporting in November 2025 &mdash; 30 of them SIVT (app spoofing, device-ID stuffing, hidden IPs) and 11 GIVT (data-centre, IAB crawlers, TOR nodes) &mdash; with a lookback window of up to one year.</p>
+
+    <p class="source-note">Sources: Pixalate Clawback Report launch, November 2025 (41 IVT types, 30 SIVT / 11 GIVT, up to 12-month lookback, SHA-256 hashed and signed evidence for clawback negotiation).</p>
+
+    <h3>What 2026 added: machine-generated traffic that is not a bot in the classic sense</h3>
+
+    <p>Two 2025&ndash;2026 developments changed the mix. First, AI crawlers and scrapers now generate impression events at scale: DoubleVerify reported an <strong>86% increase in IVT driven by AI crawlers and scrapers</strong> in January 2025. Second, AI-generated "slop" inventory is being measured as supply rather than as traffic. In work presented with TAG and ANA in mid-2026, AI-slop inventory showed an IVT rate of <strong>0.05% versus 0.32% for clean supply</strong> &mdash; that is, the fraudulent <em>traffic</em> on it is low, because the fraud is in the <em>content</em>, not the click.</p>
+
+    <p class="source-note">Sources: DoubleVerify, January 2025 (AI crawler/scraper IVT growth, reported by Business Times); TAG, ANA and Fiducia measurement work on AI-generated inventory, July 2026. Pangram's independent research estimated roughly 60,000 AI-generated "news" articles published in a single day, which is the supply-side origin of the category.</p>
+
+    <h2 id="ivt-cost">What Invalid Traffic Actually Costs</h2>
+
+    <p>IVT percentages quoted in marketing blogs range from "under 1%" to "a fifth of all traffic", and both are true &mdash; of different things. The single most useful comparison available is measured IVT on <em>unfiltered</em> inventory versus <em>certified</em> inventory, because it isolates what the filter is worth.</p>
+
+    <table class="data-table">
+      <caption>Measured IVT by channel and filter state, 2023&ndash;2026 primary sources</caption>
+      <thead>
+        <tr><th>Measurement</th><th>Channel</th><th>Result</th><th>Source and period</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Blended IVT, unfiltered buys</td><td>US display + video</td><td><strong>9.96%</strong></td><td>TAG (Trustworthy Accountability Group), 2023</td></tr>
+        <tr><td>IVT on certified channels</td><td>Same market</td><td><strong>&lt; 1%</strong></td><td>TAG Certified Channels, 2023</td></tr>
+        <tr><td>Losses after filtering</td><td>US, TAG-measured sample</td><td>$979M</td><td>TAG, 2023</td></tr>
+        <tr><td>Fraud rate, non-optimised campaigns</td><td>Display/video, open web</td><td><strong>10.9%</strong> (four-year high at end-2024)</td><td>Integral Ad Science</td></tr>
+        <tr><td>Fraud rate, optimised/filtered campaigns</td><td>Same inventory</td><td>0.6&ndash;0.7%</td><td>Integral Ad Science (a ~15&times; gap)</td></tr>
+        <tr><td>CTV fraud, unprotected campaigns</td><td>CTV / SSAI</td><td>~9% vs &lt;1% protected</td><td>DoubleVerify, May 2026; corroborated by IAS 21st MQR at 9.1%</td></tr>
+        <tr><td>Mobile in-app IVT</td><td>Open programmatic mobile app</td><td><strong>23%</strong> globally (APAC 30%, South Korea 36%; Google Play apps 18% higher than iOS)</td><td>Pixalate Internet Evidence Gathering, Q1 2024; $1.4B lost of $6.2B measured spend</td></tr>
+      </tbody>
+    </table>
+    <p class="source-note">Sources: TAG 2023 invalid traffic report; Integral Ad Science fraud-rate reporting for the period ending Q4 2024; DoubleVerify CTV analysis, May 2026; Pixalate Internet Evidence Gathering (IEG) quarterly report, Q1 2024. These figures use incompatible bases &mdash; impression-level flagged rates on tagged inventory, not share of total market spend &mdash; and should never be averaged into one number.</p>
+
+    <div class="key-point">
+      <strong>Read the gap, not the average.</strong> The same market measures 9.96% IVT when buys are unfiltered and under 1% when they run through certified channels. That is not a debate about how much fraud exists; it is a measurement of what filtering is worth. If your programmatic buys have no pre-bid traffic-quality filter, the low number in your vendor's dashboard is a statement about what they looked for, not about what was there.
+    </div>
+
+    <h3>Why the giant dollar figures cannot be added up</h3>
+
+    <p>You will see global losses quoted at $41B, $63B, $84B, $125B and higher for overlapping years. They are not competing estimates of one quantity; they measure different things:</p>
+
+    <ul>
+      <li><strong>$41B global / &gt;$12.5B US</strong> &mdash; Media Trust (2026) counts malware, scams and ad-borne fraud losses, a crime-and-malware basis.</li>
+      <li><strong>$63B in 2025</strong> &mdash; Lunio's Global Invalid Traffic Report counts invalid <em>traffic</em> across search, social and affiliate, including spam leads and low-intent clicks, a traffic-quality basis.</li>
+      <li><strong>$84B&ndash;$172B</strong> &mdash; the HUMAN Security forecast line counts fraud across ecommerce, apps and advertising on a projected-loss basis.</li>
+      <li><strong>$22B wasted of $88B audited</strong> &mdash; ANA's supply-chain study counts <em>programmatic media waste</em> inside audited marketer accounts, the narrowest and most defensible basis for a media buyer.</li>
+    </ul>
+
+    <p class="source-note">Sources: Media Trust, reported March 2026; Lunio Global Invalid Traffic Report 2026 (2025 measurement year); HUMAN Security annual ad fraud forecast; ANA Programmatic Media Supply Chain Transparency Study, December 2023 (with PwC US, TAG and Kroll; Sept 2022&ndash;Jan 2023 window; 3.55 billion impressions and $123M spend audited).</p>
+
+    <p>For anyone calculating what <em>their</em> CPM really costs, only the last basis is usable, because it is the only one measured inside a buyer's own accounts. That is the number we build the ladder on below.</p>
+
+    <h2 id="mfa">Made-for-Advertising Supply: Why Viewability Alone Fails</h2>
+
+    <p>A "made for advertising" (MFA) site is a web property created primarily to host advertising rather than to serve readers, typically dependent on paid traffic, monetised at very high ad density with rapid slot refresh, and performing well on engagement metrics that do not translate into conversions.</p>
+
+    <p>The important part is not the definition. It is what these sites do to your filters. Integral Ad Science, in the announcement of its own MFA detection technology, described MFA sites as properties <strong>optimised to perform well against traditional verification metrics such as viewability</strong>. Jounce Media, whose three-part MFA criteria are the industry reference, has made the same point: MFA inventory scores highly on vanity KPIs like viewability and video completion while producing no purchase impact.</p>
+
+    <p class="source-note">Sources: <a href="https://integralads.com/news/ias-new-mfa-site-detection-avoidance-technology/" target="_blank" rel="nofollow noopener noreferrer">Integral Ad Science MFA detection announcement, October 2023</a>; Jounce Media MFA criteria (paid-traffic dependence, aggressive monetisation, vanity-KPI performance), as summarised in Pangram's research on AI-generated news supply.</p>
+
+    <div class="key-point">
+      <strong>This is the logical core of the whole problem.</strong> If the worst inventory in the market is engineered to pass the viewability test, then subtracting non-viewable impressions does not get you to real humans on real content. Viewability is necessary and insufficient &mdash; which is why the ladder below applies a separate MFA deduction rather than treating viewability as the quality filter.
+    </div>
+
+    <p>Measured MFA exposure is small in aggregate and enormous in the wrong places. ANA's benchmark programme put MFA at <strong>0.5% of spend in Q3 2025</strong>, rising to <strong>1.1% in Q1 2026</strong> as ANA members' exposure doubled quarter-on-quarter from 0.6%. The earlier and much larger ANA study found <strong>21% of measured impressions</strong> and <strong>15% of media dollars</strong> (about $13B) landing on MFA sites, and reported that the average audited campaign ran on roughly <strong>44,000 domains</strong> while about two-thirds of display delivery came from the top 500 of them.</p>
+
+    <p class="source-note">Sources: ANA Programmatic Transparency Benchmark Q3 2025 and Q1 2026 findings; ANA Programmatic Media Supply Chain Transparency Study, December 2023 (audited $88B of programmatic spend with PwC US, TAG and Kroll). The 21% figure and the 0.5&ndash;1.1% figures are not contradictory: they use different populations (all measured impressions in a 2022&ndash;23 audit vs ANA members' filtered buys in 2025&ndash;26) and different detection thresholds.</p>
+
+    <p>The device split from IAS is the practical takeaway: MFA exposure runs <strong>2.0% on mobile web versus 0.5% on desktop</strong>, a four-fold difference, with mobile web carrying roughly 72% of total MFA exposure despite being under half of impressions. If you are buying open-web display without placement-level reporting, mobile web is where your money is going quietly.</p>
+
+    <h2 id="waste-ladder">The Waste Ladder: From Booked CPM to Qualified CPM</h2>
+
+    <p>Now assemble the deductions. This is the arithmetic that turns a reported CPM into a cost per <em>qualified</em> impression &mdash; one that was measurable, in view, human, and not on industrial advertising-only supply.</p>
+
+    <div class="formula-box">
+      Qualified impressions = Served &times; Measurable rate &times; Viewable rate (of measurable) &times; (1 &minus; IVT) &times; (1 &minus; MFA)<br>
+      Qualified CPM = Spend / Qualified impressions &times; 1,000
+    </div>
+
+    <p>Worked example, using a $10,000 buy of 2,000,000 impressions (a reported CPM of $5.00) and the 2026 measured medians used throughout this page:</p>
+
+    <table class="data-table">
+      <caption>Cost per qualified impression, layer by layer. Basis: 2,000,000 served impressions, $10,000 spend. Rates are the 2026 published medians cited above (85% measurable, 68% viewable of measurable, 1.1% IVT, 1.1% MFA).</caption>
+      <thead>
+        <tr><th>Layer</th><th>Rate applied</th><th>Implications surviving</th><th>Cost per 1,000 of these</th><th>Premium vs reported</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Reported (served)</td><td>&mdash;</td><td>2,000,000</td><td><strong>$5.00</strong></td><td>&mdash;</td></tr>
+        <tr><td>Measurable</td><td>85%</td><td>1,700,000</td><td>$5.88</td><td>+17.6%</td></tr>
+        <tr><td>Viewable (of measurable)</td><td>68%</td><td>1,156,000</td><td>$8.65</td><td>+73.0%</td></tr>
+        <tr><td>Human (after IVT)</td><td>98.9%</td><td>1,143,284</td><td>$8.75</td><td>+75.0%</td></tr>
+        <tr><td><strong>Qualified (after MFA)</strong></td><td>98.9%</td><td><strong>1,130,708</strong></td><td><strong>$8.84</strong></td><td><strong>+76.9%</strong></td></tr>
+      </tbody>
+    </table>
+    <p class="source-note">Methodology: our own calculation from the rates cited on this page, not a vendor measurement. The measurable rate of 85% is our conservative assumption derived from ANA's 15% non-measurable line item (Q3 2025); viewable rate 68% approximates IAS's 67.9% measured global display figure; IVT 1.1% and MFA 1.1% are the IAS and ANA headline rates respectively. Multiply-through assumes independence between layers, which overstates survival slightly (some IVT is also non-viewable), so treat the result as a floor.</p>
+
+    <p>The headline number is <strong>$8.84 for a real impression against a reported $5.00</strong>. Two-thirds of the inflation comes from one place: the visibility gap, not the fraud gap. Fraud and supply-quality filters are worth having, but the money is in measurability and viewability.</p>
+
+    <p>That ordering matches the industry's own conclusion. ANA's benchmark reports a <strong>TrueCPM</strong> metric on exactly this basis, and the spread it measures between better and worse managed accounts is large: <strong>$7.46 for higher-performing advertisers versus $19.04 for lower performers</strong> in the Q1&ndash;Q2 2026 programme. Same market, same auction, a 2.6&times; difference in what a real impression costs.</p>
+
+    <p class="source-note">Sources: ANA Programmatic Transparency Benchmark (with TAG TrustNet and Fiducia), Q1 2026 released May 2026 and Q2 2026 released August 2026. Cohort composition: 86 participating marketers, 66 contributing data, 20.9 billion impressions and $160M of spend. "TrueCPM" is ANA's defined metric; "qualified impression" in ANA's framework means measurable, viewable, non-IVT and non-MFA.</p>
+
+    <h2 id="calculator">True CPM Calculator: What a Qualified Impression Costs You</h2>
+
+    <p>The table above is arithmetic you can do in your head, but the four rates change with every campaign, placement and vendor. The calculator below applies the same ladder to your own numbers. Enter what your dashboard reports; it returns what each <em>real</em> impression cost you.</p>
+
+    <div class="calc-card">
+      <h3>Cost Per Qualified Impression</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="tspend">Media Spend ($)</label>
+          <input type="number" id="tspend" placeholder="e.g. 10000" min="0" step="1" value="10000">
+        </div>
+        <div class="form-group">
+          <label for="timp">Impressions Served</label>
+          <input type="number" id="timp" placeholder="e.g. 2000000" min="0" step="1" value="2000000">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="tmeas">Measurable Rate (%)</label>
+          <input type="number" id="tmeas" placeholder="e.g. 85" min="1" max="100" step="0.1" value="85">
+        </div>
+        <div class="form-group">
+          <label for="tview">Viewable Rate of Measurable (%)</label>
+          <input type="number" id="tview" placeholder="e.g. 68" min="1" max="100" step="0.1" value="68">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="tivt">Invalid Traffic Rate (%)</label>
+          <input type="number" id="tivt" placeholder="e.g. 1.1" min="0" max="100" step="0.1" value="1.1">
+        </div>
+        <div class="form-group">
+          <label for="tmfa">MFA / Off-Target Rate (%)</label>
+          <input type="number" id="tmfa" placeholder="e.g. 1.1" min="0" max="100" step="0.1" value="1.1">
+        </div>
+      </div>
+      <button class="btn btn-block" onclick="calculateTrueCPM()">Calculate True CPM</button>
+      <div class="result-box" id="trueResultBox">
+        <div class="result-value" id="trueResultValue">$0.00</div>
+        <div class="result-label">Cost per qualified impression, expressed as CPM</div>
+        <div class="result-breakdown" id="trueResultBreakdown"></div>
+      </div>
+    </div>
+
+    <p style="font-size:0.85rem;color:var(--text-light);">Defaults are the 2026 published medians used in the worked example above: 85% measurable, 68% viewable of measurable, 1.1% IVT and 1.1% MFA exposure. Replace them with your own vendor and dashboard figures before drawing conclusions &mdash; and keep the basis consistent, because viewable rate is reported over measurable impressions, not served impressions.</p>
+
+    <script>
+    function calculateTrueCPM() {
+      var fmt = function (v) { return '$' + (isFinite(v) ? v.toFixed(2) : '0.00'); };
+      var pct = function (v) { return (isFinite(v) ? v.toFixed(1) : '0.0') + '%'; };
+      var num = function (id) { var v = parseFloat(document.getElementById(id).value); return isFinite(v) && v > 0 ? v : 0; };
+      var spend = num('tspend'), impr = num('timp');
+      var meas = num('tmeas') / 100, view = num('tview') / 100, ivt = num('tivt') / 100, mfa = num('tmfa') / 100;
+      var box = document.getElementById('trueResultBox');
+      var value = document.getElementById('trueResultValue');
+      var out = document.getElementById('trueResultBreakdown');
+      if (!spend || !impr) {
+        value.textContent = 'Enter spend and impressions';
+        out.innerHTML = '';
+        return;
+      }
+      ivt = Math.min(ivt, 0.99); mfa = Math.min(mfa, 0.99);
+      var reported = spend / impr * 1000;
+      var measurable = impr * meas;
+      var viewable = measurable * view;
+      var qualified = viewable * (1 - ivt) * (1 - mfa);
+      var cpmMeasurable = measurable > 0 ? spend / measurable * 1000 : 0;
+      var cpmViewable = viewable > 0 ? spend / viewable * 1000 : 0;
+      var cpmQualified = qualified > 0 ? spend / qualified * 1000 : 0;
+      var inflation = reported > 0 ? (cpmQualified / reported - 1) * 100 : 0;
+      var shareQualified = impr > 0 ? qualified / impr * 100 : 0;
+      var wastedSpend = spend * (1 - shareQualified / 100);
+      value.textContent = fmt(cpmQualified);
+      out.innerHTML =
+        '<div>Reported CPM: <strong>' + fmt(reported) + '</strong></div>' +
+        '<div>Cost per measurable impression: <strong>' + fmt(cpmMeasurable) + '</strong> (' + Math.round(measurable).toLocaleString('en-US') + ' impressions)</div>' +
+        '<div>Cost per viewable impression: <strong>' + fmt(cpmViewable) + '</strong> (' + Math.round(viewable).toLocaleString('en-US') + ' impressions)</div>' +
+        '<div>Qualified impressions (seen, human, on-target): <strong>' + Math.round(qualified).toLocaleString('en-US') + '</strong> &mdash; ' + pct(shareQualified) + ' of served</div>' +
+        '<div>True CPM premium over reported: <strong>+' + pct(inflation) + '</strong></div>' +
+        '<div>Spend behind impressions that never became a qualified view: <strong>' + fmt(wastedSpend) + '</strong></div>';
+    }
+    </script>
+
+
+    <h2 id="cheap-cpm">Why Cheap CPMs Are the Fraud Magnet</h2>
+
+    <p>The most expensive-looking number in a programmatic report is usually the cheapest place to lose money. In ANA's benchmark programme, the headline programmatic CPM paid by participating marketers <strong>fell from $5.55 to $4.42</strong> between the Q1 2026 and later cuts, while the TrueAdSpend Index sat at <strong>43.3%</strong>. CPMs went down; the share of that CPM reaching a real, in-view human did not go up proportionally.</p>
+
+    <p>The mechanism is straightforward. Inventory is priced by what the seller can prove about it, not by what the buyer needs. When a supply path has no meaningful viewability or traffic-quality filter attached, it clears at a discount &mdash; and the discount exists because someone, somewhere, measured the reason for it.</p>
+
+    <table class="data-table">
+      <caption>Two independent measurements of the same relationship: cheaper buys, worse delivery</caption>
+      <thead>
+        <tr><th>Evidence</th><th>Finding</th><th>Source and vintage</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Price vs fraud rate</td><td>Ads bought above a $10 CPM carried <strong>39% higher fraud rates</strong> than lower-cost ads</td><td>ANA with White Ops, 2016 &mdash; old, but the direction has never been reversed</td></tr>
+        <tr><td>Channel vs fraud rate</td><td>Programmatic display carried <strong>8.3%</strong> fraudulent impressions vs <strong>2.4%</strong> for directly sold display</td><td>Integral Ad Science, Q1 2016 (historical baseline)</td></tr>
+        <tr><td>Filter state vs fraud rate</td><td><strong>10.9%</strong> non-optimised vs 0.6&ndash;0.7% optimised</td><td>Integral Ad Science, period ending Q4 2024</td></tr>
+        <tr><td>Attestation vs fraud rate</td><td>Mobile apps with <strong>no app-ads.txt</strong> showed <strong>78% higher IVT</strong> than apps with one</td><td>Pixalate Internet Evidence Gathering, Q1 2024</td></tr>
+      </tbody>
+    </table>
+    <p class="source-note">Sources as listed per row; the 2016 figures are included deliberately as the historical origin of this claim and should be quoted with their year. ANA's own framing in the December 2023 study is blunter than any of these numbers: chasing cheap CPMs "can lead to a cascade of downstream ad quality problems."</p>
+
+    <p>The Pixalate row is the one to act on, because it is the only one that describes a control you can switch on: the presence of a supply-path attestation file correlates with a 78% difference in measured fraud. Attestation is not a billing document. It is a fraud control with a price consequence.</p>
+
+    <h2 id="contracts">Refunds, Make-Goods and the 10% Discrepancy Rule</h2>
+
+    <p>Nothing on this page is recovered automatically. Deductions for invalid traffic arrive through contract mechanics, and if you do not know which mechanism applies to your buys, you are accepting a default of zero recovery.</p>
+
+    <table class="data-table">
+      <caption>How the money actually comes back, by channel and contract term</caption>
+      <thead>
+        <tr><th>Mechanism</th><th>How it works</th><th>Where it is documented</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Automatic GIVT filtration</strong></td><td>Platform excludes generally invalid traffic from billing without you asking</td><td>Google's Active View metrics note that viewable totals are reported net of compliant GIVT filtration and <em>some</em> SIVT techniques</td></tr>
+        <tr><td><strong>IVT refund / adjustment</strong></td><td>Exchange partners refund detected IVT after the fact; it appears as an "adjustment" line on settlement reports, not a dashboard number</td><td>Google Display &amp; Video 360 invalid traffic refund documentation</td></tr>
+        <tr><td><strong>Detection lag</strong></td><td>Some channels reserve a post-impression window to detect and bill back invalid traffic</td><td>Amazon Ads traffic validation terms disclose a 30-day post-impression window</td></tr>
+        <tr><td><strong>Publisher withholding</strong></td><td>On the sell side, platforms can withhold earnings for invalid activity, up to total earnings of the prior period</td><td>Google AdSense invalid traffic policy (up to 60 days of earnings)</td></tr>
+        <tr><td><strong>Controlling measurement</strong></td><td>Contract names one vendor as the billing source of truth; the other party may dispute only within a tolerance band</td><td>Standard programmatic IO term; the widely used tolerance is a <strong>10% discrepancy threshold</strong> triggering reconciliation</td></tr>
+        <tr><td><strong>Clawback evidence</strong></td><td>Vendor produces signed, hash-verified evidence of invalid impressions with a lookback window so you can demand make-goods</td><td>Pixalate Clawback reporting, November 2025 (up to 12-month lookback)</td></tr>
+        <tr><td><strong>Make-good</strong></td><td>Invalid or non-compliant delivery is replaced with free additional impressions rather than refunded</td><td>Agency/vendor service terms; the reason your "extra impressions" month may not be a good month</td></tr>
+      </tbody>
+    </table>
+    <p class="source-note">Sources: <a href="https://support.google.com/displayvideo/answer/7556661" target="_blank" rel="nofollow noopener noreferrer">Google DV360 invalid traffic refunds</a>; <a href="https://support.google.com/adsense/answer/57153" target="_blank" rel="nofollow noopener noreferrer">AdSense invalid traffic policy</a>; <a href="https://advertising.amazon.com/help/GBYPYH79NGJJ5JPS" target="_blank" rel="nofollow noopener noreferrer">Amazon Ads traffic validation</a>; Pixalate Clawback launch, November 2025.</p>
+
+    <h3>Four clauses to add to your next insertion order</h3>
+
+    <ol>
+      <li><strong>Named controlling measurement vendor</strong> with the exact threshold definition (MRC standard, or strict/GroupM if that is what you are buying to) and the discrepancy tolerance.</li>
+      <li><strong>Traffic-quality warranty</strong> referencing a maximum SIVT rate, with a clawback or make-good remedy and a stated lookback window.</li>
+      <li><strong>Measurability commitment</strong> &mdash; a minimum share of impressions that must be measurable by the controlling vendor. Almost nobody negotiates this, and it is the 15% line item.</li>
+      <li><strong>Supply exclusion list</strong> for MFA and previously flagged domains, with the right to audit placement-level delivery reports.</li>
+    </ol>
+
+    <h2 id="attestation">ads.txt and sellers.json: What Attestation Cannot Do</h2>
+
+    <p>Four specifications exist to make programmatic supply paths legible. They are sequential, and each answers a different question:</p>
+
+    <table class="data-table">
+      <caption>The supply-chain attestation stack, in the order a buyer's system consults it</caption>
+      <thead>
+        <tr><th>Standard</th><th>Question it answers</th><th>Published</th><th>What it cannot do</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>ads.txt</strong></td><td>Who is allowed to sell this publisher's inventory?</td><td>IAB Tech Lab, 2017 (desktop web)</td><td>Nothing about whether the traffic is human</td></tr>
+        <tr><td><strong>app-ads.txt</strong></td><td>Same, for mobile app inventory</td><td>March 2019</td><td>Adoption is uneven; absence correlates with higher IVT</td></tr>
+        <tr><td><strong>sellers.json</strong></td><td>Who is this seller ID, and are they direct or intermediary?</td><td>Finalised with OpenRTB SupplyChain object, 31 July 2019</td><td>Only useful if buyers actually enforce it</td></tr>
+        <tr><td><strong>schain (OpenRTB SupplyChain object)</strong></td><td>Which nodes did this bid request pass through?</td><td>31 July 2019</td><td>Declared by the sender; not independently provable</td></tr>
+      </tbody>
+    </table>
+    <p class="source-note">Sources: <a href="https://iabtechlab.com/sellers-json/" target="_blank" rel="nofollow noopener noreferrer">IAB Tech Lab sellers.json</a> and the OpenRTB SupplyChain object specification; <a href="https://developers.google.com/authorized-buyers/rtb/openrtb-guide" target="_blank" rel="nofollow noopener noreferrer">Google Authorized Buyers OpenRTB guide</a> for the schain field table (<code>complete</code>, <code>nodes</code>, and per-node <code>asi</code>, <code>sid</code>, <code>rid</code>, <code>hp</code>); <a href="https://support.google.com/adsense/answer/12171612" target="_blank" rel="nofollow noopener noreferrer">AdSense ads.txt guide</a> for crawl behaviour and the canonical line format <code>google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0</code>.</p>
+
+    <p>The commercial reading is narrow but real: attestation stops <strong>domain and inventory spoofing</strong>, which is one SIVT technique, and it correlates with materially better traffic quality (the 78% Pixalate gap). It does nothing about viewability, ad clutter, MFA content, or bots running on real devices. A campaign can be 100% ads.txt-clean and still have half its spend land in the unmeasurable tail.</p>
+
+    <p>We ran our own crawl of publisher ads.txt files to test how much of this is theoretical &mdash; including how many files fail to parse cleanly and how many seller IDs named in them do not appear in the corresponding exchange's sellers.json. That dataset is published separately: <a href="../../blog/ads-txt-crawl-study/">ads.txt crawl study: what 80 publisher files actually contain</a>.</p>
+
+    <h2 id="audit">How to Audit Your Own Campaign in Six Steps</h2>
+
+    <p>This is the workflow we use on any open-web display or video buy. It takes about an hour with placement-level exports and no vendor access beyond what your own account already reports.</p>
+
+    <ol>
+      <li><strong>Pull the measurable rate first, not the viewability rate.</strong> In Google Ads this is the measurable cost and measurable-rate columns in the viewability report; in Ad Manager it is viewable versus measurable impressions. If measurable impressions are well below served impressions, you have found your largest hole before you start.</li>
+      <li><strong>Read the viewable and non-viewable impression distribution, not just the rate.</strong> A 68% rate can be 68% on every placement or 95% on two placements and 30% everywhere else. The distribution is the actionable object.</li>
+      <li><strong>Sort spend, not impressions, by placement.</strong> Export placement-level (URL / app ID) spend and viewable impressions, then compute cost per viewable impression per placement. This is where the cheap-CPM problem becomes visible: the cheapest CPMs are usually the most expensive viewable CPMs.</li>
+      <li><strong>Cross-check the platform number against the controlling vendor's number.</strong> Compute the discrepancy. Under 10% is normal. Above 10% is a contractual conversation, and you should know which measurement is controlling before you have it.</li>
+      <li><strong>Ask which IVT class each report covers.</strong> Some reports show a single blended "fraud" rate; others split GIVT and SIVT and show what was filtered pre-bid versus detected post-bid. A 0.4% fraud rate with no class breakdown is not a result you can act on.</li>
+      <li><strong>Flag MFA and clutter separately.</strong> Most vendors now score MFA exposure and ad clutter as distinct metrics. Because MFA inventory is engineered to pass viewability, this is the only step in the audit that catches it.</li>
+    </ol>
+
+    <table class="data-table">
+      <caption>Six red flags in a placement-level export, and what each usually means</caption>
+      <thead>
+        <tr><th>Observation</th><th>Likely cause</th><th>First action</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Measurable rate below 70%</td><td>Tag not eligible, timeouts, or non-rendering supply</td><td>Exclude the placement; ask the seller which measurement runs there</td></tr>
+        <tr><td>Viewable rate high, time-in-view near zero</td><td>Slot sized to barely clear 50%/1s</td><td>Buy on attention or duration metrics, not the rate</td></tr>
+        <tr><td>Very low CPM plus very high viewability plus no conversions</td><td>MFA / content-farm supply</td><td>Add to exclusion list; check against vendor MFA score</td></tr>
+        <tr><td>Thousands of domains, two-thirds of delivery from a few hundred</td><td>Unmanaged open exchange path</td><td>Move to curated/PMP or apply allowlisting (SPO)</td></tr>
+        <tr><td>Vendor and platform numbers differ by more than 10%</td><td>Different thresholds or polling methods</td><td>Invoke controlling-measurement clause</td></tr>
+        <tr><td>IVT rate quoted without GIVT/SIVT split</td><td>Only the cheap-to-detect half was looked for</td><td>Request SIVT detection report and lookback window</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="publishers">The Publisher Mirror: Same Math, Inverted</h2>
+
+    <p>If you run a site, the same ladder explains why your <a href="../../blog/how-to-calculate-rpm-on-youtube/">RPM</a> moves without your traffic changing. Buyers increasingly pay on viewable and qualified terms, so a publisher's realised revenue per thousand served requests is the advertiser's cost per qualified impression seen from the other side.</p>
+
+    <div class="formula-box">
+      Realisation rate = Billed eCPM on served requests / Qualified-impression eCPM
+    </div>
+
+    <p>Three publisher-side factors show up in that ratio more than ad placement tweaks do:</p>
+
+    <ul>
+      <li><strong>Slot position and lazy-load behaviour.</strong> A unit that renders below the fold on a page most visitors leave after two paragraphs is sold into a discount, not a premium. This is the single biggest lever, and it is the same arithmetic as <a href="../../blog/how-to-increase-cpm-improve-ad-revenue/">improving your CPM</a> from the sell side.</li>
+      <li><strong>Ad clutter.</strong> IAS tracked open-web ad clutter worsening from 0.3% to 0.8% across 2025. More units per page raises gross revenue and lowers viewability per unit; the net can be negative once buyers price visibility.</li>
+      <li><strong>Attestation hygiene.</strong> A malformed or missing ads.txt line removes you from demand that filters on it. That is a direct auction-participation problem, not a documentation problem.</li>
+    </ul>
+
+    <p class="source-note">Sources: IAS 21st Media Quality Report (ad clutter trend); <a href="https://support.google.com/adsense/answer/7637632" target="_blank" rel="nofollow noopener noreferrer">AdSense guidance on ads.txt configuration and crawl errors</a>. Publisher-side benchmark data on this site: <a href="../../benchmarks/average-rpm-by-platform/">Average RPM by Platform</a> and <a href="../../blog/how-to-calculate-advertising-cpm-effectively/">How to Calculate Advertising CPM Effectively</a>.</p>
+
+    <h2 id="attention">Viewability Is Not Attention</h2>
+
+    <p>The last honest caveat in this article: even a perfectly qualified impression is not an attended one. The MRC threshold asks whether pixels were on screen, not whether a person looked.</p>
+
+    <p>Peer-reviewed work published in the <em>Journal of Advertising Research</em> in October 2025 examined the 1-second metric directly and found it fails asymmetrically: it is better at identifying true positives (people who were attending) than at identifying inattention. In other words, the standard errs in the seller's favour, and the error is not random noise.</p>
+
+    <p>The commercial response has been the migration toward attention metrics. In IAS's published attention experiments, an attention-optimised Kimberly-Clark campaign reported a <strong>313% household sales lift</strong> and <strong>78% higher ROAS</strong> versus its display baseline, with a <strong>56% higher attention score at a 76% lower CPC</strong>. Treat those as vendor-reported case-study outcomes rather than a market average &mdash; but note that the direction is consistent with everything above: what you are really buying is not an impression, and not even a viewable impression.</p>
+
+    <p class="source-note">Sources: <em>Journal of Advertising Research</em>, October 2025, on the discriminative validity of the one-second viewability threshold; Integral Ad Science attention-metric case study (Kimberly-Clark), vendor-reported. Google's average time-in-view metric provides the in-platform version of the same idea.</p>
+
+    <h2 id="verdict">Our Take</h2>
+
+    <blockquote>
+      <p>These are our judgements, not the sources' conclusions. We think they are the parts of this topic most guides get wrong.</p>
+    </blockquote>
+
+    <p><strong>1. The measurability hole is the most under-priced risk in programmatic.</strong> Everybody argues about fraud; almost nobody negotiates measurability. ANA's own line items put non-measurable spend above non-viewable spend, and no dashboard metric is dedicated to it. If you only fix one thing on this list, fix the denominator.</p>
+
+    <p><strong>2. Viewability targets are a management illusion.</strong> A 68% global display rate is not a performance number for a specific campaign; it is a description of a market. Setting an internal target of "80% viewability" mostly incentivises buying on placements where the measurement is generous. Compare placements against each other on cost per viewable impression instead, and stop reporting the rate itself.</p>
+
+    <p><strong>3. Fraud percentages are marketing until you know the basis.</strong> The same year can honestly produce "&lt;1%" and "23%" depending on whether the vendor is measuring filtered display, unfiltered open exchange, or mobile in-app. We have deliberately kept the bases separate in the tables above rather than blending them into one impressive number, because blended fraud statistics are the least useful artefact in this industry.</p>
+
+    <p><strong>4. MFA is the reason this problem survived a decade of viewability enforcement.</strong> The market built a visibility filter, and supply reorganised to pass it. Any quality metric that is cheap to satisfy at the pixel level will be satisfied at the pixel level. This is why we would weight contract clauses toward supply exclusion and audit rights rather than toward higher viewability floors.</p>
+
+    <p><strong>5. Cheap CPMs deserve an argument, not a budget.</strong> The instinct to buy more impressions when prices fall is exactly backwards on the open exchange. ANA's data shows headline CPMs falling while working-media share stayed around 43&ndash;45%. If a price is low, the seller is telling you something; the only question is whether you are measuring what they are hiding.</p>
+
+    <p><strong>6. Small advertisers should not buy the open exchange at all.</strong> The audit workflow above assumes placement-level reporting, a verification vendor, and negotiating leverage. Most of our readers have none of those. For budgets under roughly $10k/month, walled-garden or curated inventory with platform-side filtering is a better economic choice than cheap open supply you cannot audit &mdash; and the CPM you see there is much closer to the CPM you pay.</p>
+
+    <h2 id="faq">Frequently Asked Questions</h2>
+
+    <h3>What is a good viewability rate in 2026?</h3>
+    <p>Against measured market data, roughly 68% for display and roughly 80% for video are the 2026 open-web averages, so "good" means materially above those for the same format, device and market. Anything quoted as a universal target &mdash; "70% is great, 40% works too" &mdash; is unsourced. Compare placements on cost per viewable impression instead of comparing rates.</p>
+
+    <h3>How do you calculate cost per viewable impression?</h3>
+    <p>Divide spend by viewable impressions and multiply by 1,000. The critical detail is that viewable impressions are counted over <em>measurable</em> impressions, so if you want a number comparable to your reported CPM, you must also decide what happens to the unmeasurable remainder &mdash; exclude it (conservative) or extrapolate the measured rate onto it (what some contracts do).</p>
+
+    <h3>What is the difference between GIVT and SIVT?</h3>
+    <p>GIVT is invalid traffic that is easy to identify by general criteria &mdash; data-centre IPs, known bots and crawlers, non-browser user agents &mdash; and platforms filter it automatically at no cost to you. SIVT is deliberately disguised invalid traffic &mdash; spoofed apps and domains, hidden or stacked iframes, bot farms on real devices &mdash; which requires separate detection, contractual terms, and post-hoc recovery.</p>
+
+    <h3>Does Google refund invalid traffic?</h3>
+    <p>For Display &amp; Video 360, Google documents that its exchange partners agreed to refund IVT, and the refund appears as an adjustment line item on settlement reports rather than in the campaign dashboard. On AdSense, the flow runs the other way: Google can withhold publisher earnings for invalid activity, up to the total earnings of the prior 60 days. Automatic GIVT filtration happens without a claim in either case.</p>
+
+    <h3>Why is my viewability rate high but my results bad?</h3>
+    <p>Three common causes: the rate is measured over a small measurable subset while most spend sits in the unmeasurable tail; the inventory is made-for-advertising supply, which is engineered to score well on viewability; or the impressions cleared the one-second pixel threshold with almost no time in view. Check measurable rate, MFA exposure and average time in view before touching creative.</p>
+
+    <h3>Is viewability a vanity metric?</h3>
+    <p>It is a necessary but insufficient one. It was designed as a floor against invisible ad slots, and it works for that. It fails as a proxy for attention &mdash; the one-second threshold has been shown to err in the seller's favour &mdash; and it fails entirely against supply that optimises for it. Use it as a filter, not as a goal.</p>
+
+    <h2 id="conclusion">Conclusion</h2>
+
+    <p>The CPM in your dashboard is a price per ad event. The number that matters is a price per impression that was measurable, in view, human, and on inventory you would choose. On 2026 measured medians, that transformation takes a $5.00 reported CPM to roughly <strong>$8.84</strong>, and ANA's own benchmark shows well-managed accounts paying <strong>$7.46</strong> where poorly managed ones pay <strong>$19.04</strong> for the same unit.</p>
+
+    <p>The gap is not mysterious and it is not evenly spread. Most of it is the visibility denominator &mdash; unmeasurable and non-viewable delivery &mdash; and the remainder is concentrated in mobile web open exchange supply. Filters, contracts and audits recover a real share of it; higher viewability floors alone do not.</p>
+
+    <p>If you want the shorter version of the arithmetic without the supply-chain context, start with <a href="../../blog/how-to-calculate-advertising-cpm-effectively/">how to calculate advertising CPM effectively</a>, then come back and apply the layers here.</p>
+
+    <p>The tools on this site that do this math for you:</p>
+
+    <ul>
+      <li><a href="../../calculators/display-ads-cpm-calculator/">Display Ads CPM Calculator</a> &mdash; model display campaign cost and impressions before you buy</li>
+      <li><a href="../../calculators/batch-cpm-calculator/">Batch CPM Calculator</a> &mdash; compare CPM across platforms and placements in one pass</li>
+      <li><a href="../../calculators/ecpm-calculator/">eCPM Calculator</a> &mdash; the publisher-side version of the same ladder</li>
+      <li><a href="../../calculators/cpm-to-cpc-converter/">CPM to CPC Converter</a> &mdash; translate a viewable CPM into cost per click at your CTR</li>
+      <li><a href="../../calculators/google-ads-cpm-calculator/">Google Ads CPM Calculator</a> &mdash; Google-specific CPM modelling</li>
+      <li><a href="../../benchmarks/average-cpm-by-country/">Average CPM by Country</a> &mdash; geographic CPM benchmarks, 35 markets</li>
+    </ul>
+
+    <div class="related-links">
+      <h3>Related Tools &amp; Articles</h3>
+      <ul>
+        <li><a href="../../blog/how-to-calculate-advertising-cpm-effectively/">How to Calculate Advertising CPM Effectively</a></li>
+        <li><a href="../../blog/ads-txt-crawl-study/">ads.txt Crawl Study: What 80 Publisher Files Actually Contain</a></li>
+        <li><a href="../../blog/what-is-cost-per-thousand-impressions/">What Is Cost Per Thousand Impressions?</a></li>
+        <li><a href="../../blog/cpm-vs-ecpm-vs-rpm-comparison/">CPM vs eCPM vs RPM: Complete Comparison</a></li>
+        <li><a href="../../blog/how-to-increase-cpm-improve-ad-revenue/">How to Increase CPM and Improve Ad Revenue</a></li>
+        <li><a href="../../blog/what-is-a-good-cpm-by-industry-2026/">What Is a Good CPM? Industry Benchmarks 2026</a></li>
+        <li><a href="../../blog/how-to-calculate-ad-roi-ppc-roas/">How to Calculate Ad ROI &amp; PPC ROAS</a></li>
+        <li><a href="../../benchmarks/average-rpm-by-platform/">Average RPM by Platform</a></li>
+        <li><a href="../../calculators/display-ads-cpm-calculator/">Display Ads CPM Calculator</a></li>
+        <li><a href="../../calculators/batch-cpm-calculator/">Batch CPM Calculator</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <section class="content-section bg-alt">
+    <div class="container" style="max-width:780px;">
+      <h2>Data Sources &amp; Methodology</h2>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:16px;">Every figure on this page is attributed to a named report with its edition, publication date and measurement basis. Where a number is our own calculation rather than a vendor measurement, it is labelled as such.</p>
+      <table class="data-table">
+        <thead>
+          <tr><th>Source</th><th>Data provided</th><th>Edition / period</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Media Rating Council viewability guidelines</td><td>50%/1s display, 50%/2s video, 30% large-format thresholds</td><td>Current standard</td></tr>
+          <tr><td>Integral Ad Science, 21st Media Quality Report</td><td>Display and video viewability, IVT rates, MFA and ad-clutter exposure by device and vertical</td><td>Published July 2026; 2025 measurement period</td></tr>
+          <tr><td>ANA Programmatic Transparency Benchmark (with TAG TrustNet, Fiducia)</td><td>TrueAdSpend Index, line-item waste decomposition, TrueCPM, headline CPM</td><td>Q3 2025 (Nov 2025), Q1 2026 (May 2026), Q2 2026 (Aug 2026)</td></tr>
+          <tr><td>ANA Programmatic Media Supply Chain Transparency Study (with PwC US, TAG, Kroll)</td><td>$88B audited, ~$22B wasted, MFA share of impressions and dollars, domain-count distribution</td><td>December 2023; Sept 2022&ndash;Jan 2023 window</td></tr>
+          <tr><td>TAG (Trustworthy Accountability Group) invalid traffic report</td><td>9.96% blended IVT unfiltered vs &lt;1% certified channels; $979M losses after filtering</td><td>2023</td></tr>
+          <tr><td>Pixalate Internet Evidence Gathering; Pixalate Clawback</td><td>Mobile in-app IVT by region; app-ads.txt vs IVT gap; 41-type IVT taxonomy</td><td>Q1 2024; Clawback Nov 2025</td></tr>
+          <tr><td>DoubleVerify</td><td>CTV fraud protected vs unprotected; AI crawler/scraper IVT growth</td><td>May 2026; January 2025</td></tr>
+          <tr><td>Lunio Global Invalid Traffic Report; Media Trust; HUMAN Security</td><td>Traffic-level and crime-level global loss estimates, cited for basis comparison only</td><td>2026 editions</td></tr>
+          <tr><td>Google Help: Active View metrics, vCPM bidding, DV360 IVT refunds, AdSense ads.txt and invalid traffic</td><td>Platform metric definitions, refund mechanics, crawl behaviour, line format</td><td>Current</td></tr>
+          <tr><td>Amazon Ads product terms and traffic validation</td><td>Viewable-impression gross-up example; 30-day detection window</td><td>Current</td></tr>
+          <tr><td>Adobe DSP and Microsoft Xandr documentation</td><td>Standard vs Strict (GroupM) threshold definitions; measurement-basis differences</td><td>Current</td></tr>
+          <tr><td><em>Journal of Advertising Research</em></td><td>Asymmetric failure of the one-second threshold</td><td>October 2025</td></tr>
+          <tr><td>Our own calculation</td><td>The waste ladder table and the True CPM Calculator</td><td>Derived from the rates above, 11 November 2026</td></tr>
+        </tbody>
+      </table>
+      <h3>Methodology and limitations</h3>
+      <ul>
+        <li><strong>Bases are not comparable.</strong> Impression-level flagged rates, share-of-spend decompositions, and global loss estimates measure different populations. We have not averaged across them, and neither should you.</li>
+        <li><strong>Vendor measurements are self-interested.</strong> Every fraud and viewability figure cited here comes from a company that sells the filter that improves it. The protected-versus-unprotected gaps are useful precisely because they are the vendor's own comparison of no-filter delivery.</li>
+        <li><strong>Independence assumption.</strong> Our waste-ladder multiplication assumes each layer is independent. In practice some IVT is also non-viewable, so the true qualified count is slightly lower and our qualified CPM is a conservative floor.</li>
+        <li><strong>Open web only.</strong> ANA's Q3 2025 decomposition excludes CTV, and CTV IVT measures an order of magnitude higher. Do not apply these rates to a CTV buy.</li>
+        <li><strong>Vintage.</strong> Benchmarks on this page were compiled 11 November 2026 from 2025&ndash;2026 measurement periods. We review this page when the next IAS Media Quality Report and ANA benchmark quarter publish.</li>
+      </ul>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-top:12px;">Last updated: November 11, 2026.</p>
+    </div>
+  </section>
+<footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>CPM Calculator</h4>
+        <p style="font-size:0.88rem;margin-bottom:10px;">Free online tools for calculating and optimizing advertising costs.</p>
+        <p style="font-size:0.88rem;margin-bottom:10px;"><a href="mailto:contact@cpmcalc.org" style="color:var(--primary);">contact@cpmcalc.org</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul>
+          <li><a href="../../calculators/youtube-cpm-calculator/">YouTube CPM Calculator</a></li>
+          <li><a href="../../calculators/tiktok-cpm-calculator/">TikTok CPM Calculator</a></li>
+          <li><a href="../../calculators/ecpm-calculator/">eCPM Calculator</a></li>
+          <li><a href="../../calculators/cpm-to-cpc-converter/">CPM to CPC Converter</a></li>
+          <li><a href="../../calculators/adsense-revenue-calculator/">AdSense Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Benchmarks</h4>
+        <ul>
+          <li><a href="../../benchmarks/average-cpm-by-country/">CPM by Country</a></li>
+          <li><a href="../../benchmarks/youtube-cpm-by-niche/">YouTube CPM by Niche</a></li>
+          <li><a href="../../benchmarks/average-rpm-by-platform/">RPM by Platform</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../../blog/cpm-formula-how-it-works/">CPM Formula Guide</a></li>
+          <li><a href="../../blog/cpm-vs-cpc-key-differences/">CPM vs CPC</a></li>
+          <li><a href="../../blog/what-is-ecpm-vs-rpm/">eCPM vs RPM</a></li>
+          <li><a href="../../blog/how-to-calculate-cpm-for-ad-campaigns/">How to Calculate CPM</a></li>
+          <li><a href="../../about/">About Us</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+          <li><a href="../../privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CPM Calculator. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="../../about/">About</a>
+        <a href="../../contact/">Contact</a>
+        <a href="../../privacy/">Privacy</a>
+      </div>
+    </div>
+  </footer>
+<script>
+document.querySelectorAll('.has-dropdown > a').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    if (window.innerWidth <= 768) {
+      if (!this.parentElement.classList.contains('open')) {
+        e.preventDefault();
+        this.parentElement.classList.add('open');
+      }
+    }
+  });
+});
+</script>
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:20px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;">
+    <p style="margin:0;flex:1;font-size:0.9rem;line-height:1.5;">
+      We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.
+      <a href="/privacy/" style="color:#4a9eff;text-decoration:underline;">Learn more</a>
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#4a9eff;color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.9rem;">Accept</button>
+      <button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:10px 24px;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.9rem;">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+function acceptCookies(){localStorage.setItem('cookie_consent','accepted');document.getElementById('cookie-banner').style.display='none';}
+function declineCookies(){localStorage.setItem('cookie_consent','declined');document.getElementById('cookie-banner').style.display='none';}
+if(!localStorage.getItem('cookie_consent')){document.getElementById('cookie-banner').style.display='block';}
+</script>
+</body>
+</html>
